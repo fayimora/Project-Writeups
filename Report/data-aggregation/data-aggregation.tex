@@ -4,9 +4,6 @@ First step towards this project is to fetch our data from Twitter. The data is c
 groups, relevant and irrelevant. We will be spending most of our time with the relevant data.
 
 
-% \section{Data Collection}
-
-
 \section{Data Classification}
 To carry out our experiments, we will need to filter out irrelevant tweets. Irrelevant tweets are
 tweets which we do not really care about. Some examples include:
@@ -33,6 +30,7 @@ three step process and we will discuss them in the next sub sections.
 \subsection{Preparing train data}
 Train data, also known as a training set is a set of data used to train a knowledge database, in
 this case, a classifier. There are two main ways of getting a training set and they are
+
 \begin{enumerate*}
 [label=\itshape\alph*\ushape)]
   \item creating a new set of data
@@ -56,5 +54,12 @@ I created an application to asist with labelling our train data. It can be found
 
 
 \subsection{Choosing and training a classifier}
+The Naive Bayes Classifier is a probabilistic classifier which is mainly based of the Bayes Theorem.
+The classifier works on the assumption that the presence or absence of two features are
+stochastically independent.
+
+We will train a Naive Bayes Classifier and use it to classify the tweets into relevent and
+irrelevant groups. This work is currently in progress so the accuracy can not be reported at the
+time if this writing.
 
 \subsection{Classify tweets}
