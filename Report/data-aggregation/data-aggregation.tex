@@ -17,9 +17,9 @@ tweets which we do not really care about. Some examples include:
 Both tweets could be regarded as relevant but for our use case, they are not. This is because we are
 only interested in tweets that contain personal opinions about Apple Incorporated. Examples of
 relevant tweets include:
-
+their thoughts
 \begin{itemize}
-  \item \textit{Anybody wants to spare me a iPhone HAHAHA}
+  \item \textit{Once you get hooked to \#Mac, you will definitely go back.... to \#Windows! Lol!}
   \item \textit{If Tim Cook at Apple knows anything about him, it'd be to stay away from Icahn.}
 \end{itemize}
 
@@ -39,10 +39,10 @@ this case, a classifier. There are two main ways of getting a training set and t
 
 For our purposes, we use the former because we are dealing with natural language and not numbers.
 People write in different ways on Twitter and trying to create a new training set to encompass all
-possibilities would be very inefficient.
+possibilities would be very time consuming.
 
-I created an application to asist with labelling our train data. It can be found at
-\url{http://bit.ly/data\_labeller} and screenshot has been provided in Figure~\ref{fig:labeller}
+I created an application to assist with labelling our train data. It can be found at
+\url{http://bit.ly/data\_labeller} and a screen shot has been provided in Figure~\ref{fig:labeller}
 
 \begin{figure}
   \begin{center}
@@ -54,12 +54,11 @@ I created an application to asist with labelling our train data. It can be found
 
 
 \subsection{Choosing and training a classifier}
-The Naive Bayes Classifier is a probabilistic classifier which is mainly based of the Bayes Theorem.
+A Naive Bayes Classifier is a probabilistic classifier which is mainly based on the Bayes Theorem.
 The classifier works on the assumption that the presence or absence of two features are
 stochastically independent.
 
-We will train a Naive Bayes Classifier and use it to classify the tweets into relevent and
-irrelevant groups. This work is currently in progress so the accuracy can not be reported at the
-time if this writing.
+We will train a Naive Bayes Classifier and use it to classify the tweets into relevant and
+irrelevant groups. \textbf{This work is currently in progress}
 
-\subsection{Classify tweets}
+\subsection{Classifying tweets}
