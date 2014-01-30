@@ -5,15 +5,68 @@
 
 \section{Introduction}
 \label{sec:background_introduction}
+% In this chapter, we explain some concepts and take a look at some background work related to this
+% study. Firstly, we review some research in the use of the naive Bayes Classifier for text
+% classification. Then we take a look at some background in topic modelling, specifically the Latent
+% Dirichlet Allocation
 
-\section{Text Classification}
+Automatic Text Classification or Text Categorization is a rapidly growing field in Machine Learning
+and Natural Language Processing. This mainly due to the amount of electronic data we currently
+generate. The main task is to assign one or more classes to a given text document. Applications of
+text classification include \textit{Email Spam Detection} and \textit{Language
+Detection}. The former involves trying to distinguish spam emails from legitimate ones while the
+latter involves the identification of the language a document was written in.
+
+However, this study makes use of classification techniques for data filtration (removing irrelevant
+documents from a list of documents, similar to spam filtering), topic modelling (extracting topics
+from a list of documents) and sentiment analysis (predicting the sentiment of the author of a
+document). This chapter explains a few background concepts and reviews some relevant research
+previously done in this area.
+
+% There are two main ways for classifying documents into classes. They are:
+% \begin{enumerate}
+%   \item \textbf{Supervised classification}: This usually involves the use of a predefined set of
+%     documents used to train the algorithm. Examples include: naive Bayes Classifier and Support
+%     vector machines
+%   \item \textbf{Unsupervised Classification}: This is also known as \textit{Clustering} and unlike
+%     the supervised technique, there is no predefined set of documents. This method is also useful
+%     when the number of classes is not known before hand. An example is k-means clustering.
+% \end{enumerate}
+%
+% Both techniques will be applied in this study.
+
+\section{Naive Bayes Classifier}
 \label{sec:bg_text_classification}
+The naive Bayes classifier is the simplest classifier that can be used and this is due to the fact
+that is is based on simple Bayes Theorem. This means it is a probabilistic classifier which
+assumes that all features of the documents are independent of each other.
+
+Bayes theorem states that the probability of $A$ given $B$ is the probability of $B$ given $A$ times
+the probability of $A$ divided by the probability of $B$. Mathematically, this is written as:
+\begin{equation}
+  p(A|B) = \frac{p(B|A)p(A)}{p(B)}
+\end{equation}
+
+Applying this logic to text classification, the probability that a document $d_i \in D$ belongs to a
+class $c$ is denoted as:
+\begin{equation}
+  p(c|d_i) = \frac{p(d_i|c)p(c)}{p(d_i)}
+\end{equation}
+
+Although other techniques like Maximum Entropy, Random Forests or Support Vector Machines tend to
+perform better, a naive Bayes classifier will require less memory and CPU cycles. It is also
+computationally less complex and simpler to implement. With regard to
+performance,~\cite{huangLuLing2003} proved using multiple datasets from~\cite{blakeMerz1998} that
+the naive Bayes classifier in many cases performs as good as other complex
+classifiers and~\cite{zhang2004} goes further to explain why it performs well. Other studies have also
+found Bayesian classifiers to be effective without being affected by its simple independence
+assumption~\cite{langley1992analysis,manning2008}.
 
 \section{Topic Modelling}
 \label{sec:bg_topic_modelling}
 
-\section{Sentiment Analysis}
-\label{sec:bg_sentiment_analysis}
+% \section{Sentiment Analysis}
+% \label{sec:bg_sentiment_analysis}
 
 \section{Model Evaluation}
 \label{sec:bg_model_evaluation}
