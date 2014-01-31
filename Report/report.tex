@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{authordate1-4}
+\usepackage{appendix}
 
 \hypersetup{linktoc=all}
 % \usepackage{url}
@@ -37,12 +38,12 @@
 \input{sentiment-analysis/sentiment-analysis}
 % \input{interim-stuffs/interim}
 
-% body of thesis comes here
-
 \input{conclusion/conclusion}
 
 \appendix
-% appendices come here
+\appendixpage
+\addappheadtotoc
+\input{appendices/sample}
 
 
 \bibliographystyle{authordate1}
