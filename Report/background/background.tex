@@ -53,25 +53,37 @@ assumption~\cite{langley1992analysis,manning2008}.
 \section{Topic Modelling}
 \label{sec:bg_topic_modelling}
 Topic Modelling is a process by which abstract topics/themes are extracted from a collection of
-documents. This is usually achieved with the aid of topic models, a suite of algorithms used for
-topic modelling. Topic modelling has been applied in a variety of fields like Software Analysis
+documents. This process is usually carried out with the aid of topic models, a suite of algorithms
+used for topic modelling. It has been applied in a variety of fields like Software Analysis
 where~\cite{linstead2009software} used topic modelling to find topics embedded in code
 and~\cite{gethers2010using} used topic modelling to capture coupling among
 classes.~\cite{kireyev2009applications} applied topic models on disaster related data from Twitter
 in an effort to determine what topics were discussed within the time span of a natural
 disaster.~\cite{hospedales2009markov} introduced a new topic model that can be used to analyze
-videos with complex and crowded scenes to discover regularities in the video. A system built on such
-model will be able to answer a question like ``What interesting events happened in the last 5
-hours''. Other fields include Audio Analysis~\cite{smaragdis2009topic}, Influence
+videos with complex and crowded scenes in other to discover regularities in the videos. A system
+built on such model will be able to answer a question like ``What interesting events happened in the
+last 5 hours''. Other fields include Audio Analysis~\cite{smaragdis2009topic}, Influence
 modelling~\cite{gerrish2009modeling}, Finance~\cite{doyle2009financial}, Writer
 Identification~\cite{bhardwaj2009writer} and many more.
 
 There are a number of topic models but the two main ones are \textbf{\textit{Latent Semantic
-Indexing}} (LSI) and \textbf{\textit{Latent Dirichlet Allocation}} (LDA). LSI, also known as
-\textit{Latent Semantic Analysis}, uses matrix-algebra computations to identify any patterns in
+Indexing}} (LSI) and \textbf{\textit{Latent Dirichlet Allocation}} (LDA) and we discuss them further
+in the following sections.
+
+
+\subsection{Latent Semantic Indexing}
+\label{sub:bg_lsa}
+Latent Semantic Indexing, sometimes referred to as \textit{Latent Semantic Analysis}, is an indexing
+technique leverages matrix-algebra computations\footnote{Specifically, it uses Singular Value
+Decomposition which is a factorization of a complex matrix. See
+\url{http://en.wikipedia.org/wiki/Singular_value_decomposition}} to identify any patterns in
 relationships between a collection of text documents. It works based on the assumption that words
 used in the same context tend to have homogeneous
-meanings~\cite{landauer2006latent,dumais2004latent}.
+meanings~\cite{deerwester1990indexing,dumais2004latent,landauer2006latent}.
+
+\subsection{Latent Dirichlet allocation}
+\label{sub:bg_lda}
+lda is blah blh blah
 
 % \section{Sentiment Analysis}
 % \label{sec:bg_sentiment_analysis}
