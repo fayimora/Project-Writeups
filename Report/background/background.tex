@@ -105,13 +105,22 @@ unable to and a significant step forward to solve this problem was made my
 argues that while Hoffman's work is a very useful step towards using probabilistic models to model
 text, it is incomplete.
 
-\subsection{Latent Dirichlet allocation}
+\subsection{Latent Dirichlet Allocation}
 \label{sub:bg_lda}
-lda is blah blh blah
+Latent Dirichlet Allocation(LDA)~\cite{blei2003latent} is a generative\footnote{See
+\url{http://en.wikipedia.org/wiki/Generative_model}} and probabilistic model that can be used to
+automatically group words into topics and documents into a mixture of topics. It works based on the
+assumption that each document contains one or more topics. Words can also exist in multiple topics
+as they actually do in natural language. In other to tackle the problem of ambiguity in LSI, Latent
+Dirichlet Allocation takes a combination of all topics that seem relevant to a document in a corpora
+and compares that document to the topics in an effort to determine which topic is more closer to the
+document.
 
-% \section{Sentiment Analysis}
-% \label{sec:bg_sentiment_analysis}
-
-\section{Model Evaluation}
-\label{sec:bg_model_evaluation}
+Most of the research done on social media data, especially Twitter, has been to detect usage and
+communities \cite{java2007we}. Nonetheless, recent research has started to look into the detection
+of topics in social media. \cite{kireyev2009applications} used LDA to extract topics/themes from a
+collection of disaster related tweets. \cite{zhao2011comparing} use LDA to compare news related
+tweets on Twitter with topics in The New York Times. They were also able to show that the standard
+LDA might not always work well on tweets and so they proposed a new model which is a slight variant
+of LDA. \cite{weng2010twitterrank} also used LDA to find topic sensitive influential twitter users.
 
