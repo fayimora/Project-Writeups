@@ -27,7 +27,10 @@ previously done in this area.
 \label{sec:bg_naive_bayes}
 The Na\"{i}ve Bayes classifier is the simplest classifier that can be used and this is due to the
 fact that is is based on simple Bayes Theorem. It is a probabilistic classifier which assumes that
-all features of the documents are independent of each other.
+all features of the documents are independent of each other. This means that if a document has
+features $f1$ and $f2$ (could be length of document, occurrence of words, language e.t.c), the
+existence of $f1$ has nothing to do with the existence of $f2$. This also means that it makes
+assumptions that may or may not be correct, hence the ``Na\"{i}ve'' in its name.
 
 Bayes theorem states that the probability of $A$ given $B$ is the probability of $B$ given $A$ times
 the probability of $A$ divided by the probability of $B$. Mathematically, this is written as:
