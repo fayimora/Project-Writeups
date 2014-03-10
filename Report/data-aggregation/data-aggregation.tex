@@ -72,6 +72,35 @@ As discussed in Section~\ref{sec:bg_naive_bayes}, a Na\"{i}ve Bayes Classifier i
 classifier which is based on the Bayes Theorem. We will train one and use it to classify the tweets
 into relevant and irrelevant groups.
 
+Unfortunately, the classifier takes as input a vector space representation of our tweets and not the
+actual text. This means we have to convert our tweets into a vector representation of some sort. We
+will be using the \textbf{bag of words model} in this study but before we transform the tweets, we
+have to pre-process the tweets.
+
+\subsubsection{Preprocessing}
+\label{sec:preprocessing}
+Preprocessing are the tasks we have to carry out before the main transformation of the tweets to a
+vector space model. Firstly, we'll peruse through our tweets to remove new line characters and
+links. We then take each tweet and convert it into a list unigrams an bigrams.
+
+Some tweets have special characters like new lines, excess spaces and Unicode characters. These
+characters are noisy features we have to remove them, we make use of a regular expression. Every
+programming language has a function to strip a text off newlines and whitespace and it can be
+easily done in one line of code. Removing the links from the text is a little more complex and the
+``easiest'' way to do this would be to use a regular expression. \cite{friedl2006mastering} in his
+book \textit{Mastering Regular Expressions} describes regular expressions as a very flexible mini
+language that is used for text processing. The regular expression we will be using to find links in
+our text is
+\begin{verbatim}
+  {(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?}
+\end{verbatim}
+
+Unfortunately, all a regular expression can do is search for patterns in text. Luckily, most
+programming languages provides support regular expressions so all we have to do is search for the
+pattern in each tweet and use the language features to replace the matched pattern with nothing(an
+empty string preferably).
+
+
 % In other to analyse how well our classifier works, we will measure the classifier's accuracy,
 % precision and recall. We will also look into why we need all three evaluation techniques.
 
