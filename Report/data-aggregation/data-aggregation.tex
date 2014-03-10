@@ -109,7 +109,18 @@ Stop words are usually the most common word in a language, English in this case.
 better model performance.
 %TODO: reference a table in a future section that proves this.
 
-% Finally, we convert each tweet to a list of \textit{n-grams}
+Finally, we convert each tweet to a list of \textit{n-grams}. An n-gram ``\textit{is a contiguous
+sequence of n items from a given sequence of text}''\footnote{See
+http://en.wikipedia.org/wiki/N-gram}. The easiest way to understand n-grams is with an example.
+Assuming we have a document with the text ``machine learning rocks''. All unigrams(n-grams
+where n is 1) that can be extracted from that text are \textit{``machine''}, \textit{``learning''}
+and \textit{``rocks''}. Also, all bigrams(n-grams where n is 3) in the document are
+\textit{``machine learning''} and \textit{``learning rocks''}. In this study, we will be using a
+combination of unigrams and bigrams.
+
+We have discussed different preprocessing tasks that we have to apply to our documents before
+transforming them into the bag of words matrix representation. In the next section, we will look
+into how the bag of words model works and then transform our tweets into this model.
 
 
 % \subsubsection{Converting tweets to bag-of-words representation}
