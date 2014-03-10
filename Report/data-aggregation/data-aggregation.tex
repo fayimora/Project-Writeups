@@ -80,33 +80,33 @@ have to pre-process the tweets.
 \subsubsection{Preprocessing}
 \label{sec:preprocessing}
 Preprocessing are the tasks we have to carry out before the main transformation of the tweets to a
-vector space model. Firstly, we'll peruse through our tweets to remove new line characters and
-links and stop words. We then take each tweet and convert it into a list of \textit{n-grams}.
+vector space model. Firstly, we lll peruse through our tweets to remove new line characters, links
+and stop words. We then take each tweet and convert it into a list of \textit{n-grams}.
 
-Some tweets have special characters like new lines, excess spaces and Unicode characters. These
-characters are noisy features we have to remove them, we make use of a regular expression. Every
-programming language has a function to strip a text off newlines and whitespace and it can be
-easily done in one line of code. Removing the links from the text is a little more complex and the
-``easiest'' way to do this would be to use a regular expression. \cite{friedl2006mastering} in his
-book \textit{Mastering Regular Expressions} describes regular expressions as a very flexible mini
-language that is used for text processing. The regular expression we will be using to find links in
-our text is
+Some tweets have special characters like new lines, excess spaces and Unicode characters and these
+characters are irrelevant for our use-case. Every programming language has a function to strip
+off newlines and whitespace and it can be easily done in one line of code. Removing the links from
+the text is a little more complex and the ``easiest'' way to do this would be to use a regular
+expression. \cite{friedl2006mastering} in his book \textit{Mastering Regular Expressions} describes
+regular expressions as a very flexible mini language that is used for text processing. The regular
+expression we will be using to find links in our text is
 \begin{verbatim}
   {(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?}
 \end{verbatim}
 
 Unfortunately, all a regular expression can do is search for patterns in text. Luckily, most
-programming languages provides support regular expressions so all we have to do is search for the
+programming languages provide support for regular expressions so all we have to do is search for the
 pattern in each tweet and use the language features to replace the matched pattern with nothing(an
 empty string preferably).
 
 The next step is to remove stop words in each tweet. \cite{wilbur1992automatic} defines a stop word
 as ``\textit{a word which may be identified as a word that has the same likelihood of occurring in
-those documents not relevant to a query as in those documents relevant to the query.}'' In layman's
-terms, stop words are words that occur in every document irrespective of the document's relevance.
-Stop words are usually the most common word in a language, English in this case. Some examples include
+those documents not relevant to a query as in those documents relevant to the query.}'' In other
+words, stop words occur in every document irrespective of the document's relevance. Stop words are
+usually the most common word in a language, English in this case. Some examples include
 \textit{and}, \textit{or}, \textit{the} etc. Removal of stop words from text usually results in
 better model performance.
+
 %TODO: reference a table in a future section that proves this.
 
 Finally, we convert each tweet to a list of \textit{n-grams}. An n-gram ``\textit{is a contiguous

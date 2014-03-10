@@ -11,7 +11,7 @@
 % Dirichlet Allocation
 
 Automatic Text Classification or Text Categorization is a rapidly growing field in Machine Learning
-and Natural Language Processing. This mainly due to the amount of electronic data we currently
+and Natural Language Processing. This is mainly due to the amount of electronic data we currently
 generate. The main task is to assign one or more classes to a given text document. Applications of
 text classification include \textit{Email Spam Detection} and \textit{Language
 Detection}. The former involves trying to distinguish spam emails from legitimate ones while the
@@ -26,11 +26,11 @@ previously done in this area.
 \section{Na\"{i}ve Bayes Classifier}
 \label{sec:bg_naive_bayes}
 The Na\"{i}ve Bayes classifier is the simplest classifier that can be used and this is due to the
-fact that is is based on simple Bayes Theorem. It is a probabilistic classifier which assumes that
+fact that it is based on simple Bayes Theorem. It is a probabilistic classifier which assumes that
 all features of the documents are independent of each other. This means that if a document has
 features $f1$ and $f2$ (could be length of document, occurrence of words, language e.t.c), the
-existence of $f1$ has nothing to do with the existence of $f2$. This also means that it makes
-assumptions that may or may not be correct, hence the ``Na\"{i}ve'' in its name.
+existence of $f1$ has nothing to do with the existence of $f2$ and vice versa. This also means that
+it makes assumptions that may or may not be correct, hence the ``Na\"{i}ve'' in its name.
 
 Bayes theorem states that the probability of $A$ given $B$ is the probability of $B$ given $A$ times
 the probability of $A$ divided by the probability of $B$. Mathematically, this is written as:
@@ -46,7 +46,7 @@ class $c$ is denoted as:
 
 % TODO: Show the final equation for the naive bayes classifier
 Although other techniques like Maximum Entropy, Random Forests or Support Vector Machines tend to
-perform better, a naive Bayes classifier will require less memory and CPU cycles. It is also
+perform better, a naive Bayes classifier will require less memory and CPU cycles. Furthermore, it is
 computationally less complex and simpler to implement. With regard to
 performance,~\cite{huangLuLing2003} showed using multiple datasets from~\cite{blakeMerz1998} that
 the naive Bayes classifier in many cases performs as good as other complex classifiers
@@ -60,7 +60,7 @@ unsolicited messages. They are typically to large numbers of users} filtering. A
 filter is a system that takes in text and decides whether or not it is
 spam. \cite{androutsopoulos2000learning} addressed this issue using a naive Bayes classifier. They
 trained the model using a predefined set of manually labelled messages. They were able to show that
-the naive Bayes classifier was able to classify messages with impressive accuracy and precision
+the naive Bayes classifier was capable of classifying messages with impressive accuracy and precision
 compared to the then common keyword based approach to classification. \cite{deshpande2007evaluation}
 also carried out a similar research and the results were equally impressive and similar.
 
@@ -88,7 +88,7 @@ in the following sections.
 \subsection{Latent Semantic Indexing}
 \label{sub:bg_lsa}
 Latent Semantic Indexing(LSI), sometimes referred to as \textit{Latent Semantic Analysis}, is an
-indexing technique leverages matrix-algebra computations\footnote{Specifically, it uses Singular
+indexing technique that leverages matrix-algebra computations\footnote{Specifically, it uses Singular
 Value Decomposition which is a factorization of a complex matrix. See
 \url{http://en.wikipedia.org/wiki/Singular_value_decomposition}} to identify any patterns in
 relationships between a collection of text documents. It works based on the assumption that words
@@ -99,9 +99,9 @@ web page are relevant to the web page even though they might not be used in that
 main drawbacks the LSI model suffers from is ambiguity.
 
 Assuming we have two documents, one talking about Microsoft Office and the other talking about
-actual physical Office space. How can the model differentiate between the two? Unfortunately, it is
+actual physical office space. How can the model differentiate between the two? Unfortunately, it is
 unable to and a significant step forward to solve this problem was made my
-\cite{hofmann1999probabilistic} who presented the probabilistic LSI variation. \cite{blei2003latent}
+\cite{hofmann1999probabilistic} who presented the probabilistic LSI model. \cite{blei2003latent}
 argues that while Hoffman's work is a very useful step towards using probabilistic models to model
 text, it is incomplete.
 
@@ -119,7 +119,7 @@ document.
 Most of the research done on social media data, especially Twitter, has been to detect usage and
 communities \cite{java2007we}. Nonetheless, recent research has started to look into the detection
 of topics in social media. \cite{kireyev2009applications} used LDA to extract topics/themes from a
-collection of disaster related tweets. \cite{zhao2011comparing} use LDA to compare news related
+collection of disaster related tweets. \cite{zhao2011comparing} used LDA to compare news related
 tweets on Twitter with topics in The New York Times. They were also able to show that the standard
 LDA might not always work well on tweets and so they proposed a new model which is a slight variant
 of LDA. \cite{weng2010twitterrank} proposed an algorithm that leverages LDA to find topic-sensitive
