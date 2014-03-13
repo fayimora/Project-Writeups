@@ -7,6 +7,7 @@
 
 \linespread{0.66}
 \def\submitdate#1{\gdef\@submitdate{#1}}
+\def\supervisor#1{\gdef\@supervisor{Supervisor: #1}}
 
 \def\maketitle{
   \begin{titlepage}{
@@ -22,7 +23,7 @@
   \par
   {\Large \@author}
   \vskip 0.1in
-  {\Large Supervisor: Dr. Matthew Purver}
+  {\Large \@supervisor}
 
   \vskip 4in
   \par
