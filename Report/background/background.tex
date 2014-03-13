@@ -48,20 +48,20 @@ class $c$ is denoted as:
 Although other techniques like Maximum Entropy, Random Forests or Support Vector Machines tend to
 perform better, a naive Bayes classifier will require less memory and CPU cycles. Furthermore, it is
 computationally less complex and simpler to implement. With regard to
-performance,~\cite{huangLuLing2003} showed using multiple datasets from~\cite{blakeMerz1998} that
+performance,~\citet{huangLuLing2003} showed using multiple datasets from~\citet{blakeMerz1998} that
 the naive Bayes classifier in many cases performs as good as other complex classifiers
-and~\cite{zhang2004} goes further to explain why it performs well. Other studies have also found
+and~\citet{zhang2004} goes further to explain why it performs well. Other studies have also found
 Bayesian classifiers to be effective without being affected by its simple independence
-assumption~\cite{langley1992analysis,manning2008}.
+assumption~\citep{langley1992analysis,manning2008}.
 
 The Na\"{i}ve Bayes classifier has been used in many text classification problems but one of its
 common applications which is relevant to tweet classification is email spam\footnote{irrelevant or
 unsolicited messages. They are typically to large numbers of users} filtering. A spam
 filter is a system that takes in text and decides whether or not it is
-spam. \cite{androutsopoulos2000learning} addressed this issue using a naive Bayes classifier. They
+spam. \citet{androutsopoulos2000learning} addressed this issue using a naive Bayes classifier. They
 trained the model using a predefined set of manually labelled messages. They were able to show that
 the naive Bayes classifier was capable of classifying messages with impressive accuracy and precision
-compared to the then common keyword based approach to classification. \cite{deshpande2007evaluation}
+compared to the then common keyword based approach to classification. \citet{deshpande2007evaluation}
 also carried out a similar research and the results were equally impressive and similar.
 
 \section{Topic Modelling}
@@ -69,16 +69,16 @@ also carried out a similar research and the results were equally impressive and 
 Topic Modelling is a process by which abstract topics/themes are extracted from a collection of
 documents. This process is usually carried out with the aid of topic models, a suite of algorithms
 used for topic modelling. It has been applied in a variety of fields like Software Analysis
-where~\cite{linstead2009software} used topic modelling to find topics embedded in code
-and~\cite{gethers2010using} used topic modelling to capture coupling among
-classes.~\cite{kireyev2009applications} applied topic models on disaster related data from Twitter
+where~\citet{linstead2009software} used topic modelling to find topics embedded in code
+and~\citet{gethers2010using} used topic modelling to capture coupling among
+classes.~\citet{kireyev2009applications} applied topic models on disaster related data from Twitter
 in an effort to determine what topics were discussed within the time span of a natural
-disaster.~\cite{hospedales2009markov} introduced a new topic model that can be used to analyze
+disaster.~\citet{hospedales2009markov} introduced a new topic model that can be used to analyze
 videos with complex and crowded scenes in other to discover regularities in the videos. A system
 built on such model will be able to answer a question like ``What interesting events happened in the
-last 5 hours''. Other fields include Audio Analysis~\cite{smaragdis2009topic}, Influence
-modelling~\cite{gerrish2009modeling}, Finance~\cite{doyle2009financial}, Writer
-Identification~\cite{bhardwaj2009writer} and many more.
+last 5 hours''. Other fields include Audio Analysis~\citep{smaragdis2009topic}, Influence
+modelling~\citep{gerrish2009modeling}, Finance~\citep{doyle2009financial}, Writer
+Identification~\citep{bhardwaj2009writer} and many more.
 
 There are a number of topic models but the two main ones are \textbf{\textit{Latent Semantic
 Indexing}} (LSI) and \textbf{\textit{Latent Dirichlet Allocation}} (LDA) and we discuss them further
@@ -93,7 +93,7 @@ Value Decomposition which is a factorization of a complex matrix. See
 \url{http://en.wikipedia.org/wiki/Singular_value_decomposition}} to identify any patterns in
 relationships between a collection of text documents. It works based on the assumption that words
 used in the same context tend to have homogeneous meanings
-\cite{deerwester1990indexing,dumais2004latent,landauer2006latent}. LSI, has been used mostly in
+\citep{deerwester1990indexing,dumais2004latent,landauer2006latent}. LSI, has been used mostly in
 Information Retrieval and Search Engine Optimisation where it tries to figure out what words in a
 web page are relevant to the web page even though they might not be used in that page. One of the
 main drawbacks the LSI model suffers from is ambiguity.
@@ -101,13 +101,13 @@ main drawbacks the LSI model suffers from is ambiguity.
 Assuming we have two documents, one talking about Microsoft Office and the other talking about
 actual physical office space. How can the model differentiate between the two? Unfortunately, it is
 unable to and a significant step forward to solve this problem was made my
-\cite{hofmann1999probabilistic} who presented the probabilistic LSI model. \cite{blei2003latent}
+\citet{hofmann1999probabilistic} who presented the probabilistic LSI model. \citet{blei2003latent}
 argues that while Hoffman's work is a very useful step towards using probabilistic models to model
 text, it is incomplete.
 
 \subsection{Latent Dirichlet Allocation}
 \label{sub:bg_lda}
-Latent Dirichlet Allocation(LDA)~\cite{blei2003latent} is a generative\footnote{See
+Latent Dirichlet Allocation(LDA)~\citet{blei2003latent} is a generative\footnote{See
 \url{http://en.wikipedia.org/wiki/Generative_model}} and probabilistic model that can be used to
 automatically group words into topics and documents into a mixture of topics. It works based on the
 assumption that each document contains one or more topics. Words can also exist in multiple topics
@@ -118,10 +118,10 @@ document.
 
 Most of the research done on social media data, especially Twitter, has been to detect usage and
 communities \cite{java2007we}. Nonetheless, recent research has started to look into the detection
-of topics in social media. \cite{kireyev2009applications} used LDA to extract topics/themes from a
-collection of disaster related tweets. \cite{zhao2011comparing} used LDA to compare news related
+of topics in social media. \citet{kireyev2009applications} used LDA to extract topics/themes from a
+collection of disaster related tweets. \citet{zhao2011comparing} used LDA to compare news related
 tweets on Twitter with topics in The New York Times. They were also able to show that the standard
 LDA might not always work well on tweets and so they proposed a new model which is a slight variant
-of LDA. \cite{weng2010twitterrank} proposed an algorithm that leverages LDA to find topic-sensitive
+of LDA. \citet{weng2010twitterrank} proposed an algorithm that leverages LDA to find topic-sensitive
 influential twitter users.
 

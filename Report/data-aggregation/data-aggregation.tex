@@ -87,7 +87,7 @@ Some tweets have special characters like new lines, excess spaces and Unicode ch
 characters are irrelevant for our use-case. Every programming language has a function to strip
 off newlines and whitespace and it can be easily done in one line of code. Removing the links from
 the text is a little more complex and the ``easiest'' way to do this would be to use a regular
-expression. \cite{friedl2006mastering} in his book \textit{Mastering Regular Expressions} describes
+expression. \citet{friedl2006mastering} in his book \textit{Mastering Regular Expressions} describes
 regular expressions as a very flexible mini language that is used for text processing. The regular
 expression we will be using to find links in our text is
 \begin{verbatim}
@@ -99,7 +99,7 @@ programming languages provide support for regular expressions so all we have to 
 pattern in each tweet and use the language features to replace the matched pattern with nothing(an
 empty string preferably).
 
-The next step is to remove stop words in each tweet. \cite{wilbur1992automatic} defines a stop word
+The next step is to remove stop words in each tweet. \citet{wilbur1992automatic} defines a stop word
 as ``\textit{a word which may be identified as a word that has the same likelihood of occurring in
 those documents not relevant to a query as in those documents relevant to the query.}'' In other
 words, stop words occur in every document irrespective of the document's relevance. Stop words are
@@ -126,7 +126,7 @@ into how the bag of words model works and then transform our tweets into this mo
 \subsubsection{Transforming tweets to bag-of-words}
 The bag of words model is a common representation of text that involves representing a document as a
 multiset of its words. It is a very common way to represent documents and it has also been used
-recently in computer vision \cite{sivic2009efficient}.
+recently in computer vision \citep{sivic2009efficient}.
 
 
 \subsubsection{Training the initial classifier}
