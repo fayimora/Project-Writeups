@@ -124,10 +124,37 @@ into how the bag of words model works and then transform our tweets into this mo
 
 
 \subsubsection{Transforming tweets to bag-of-words}
-The bag of words model is a common representation of text that involves representing a document as a
+The bag of words model is a common representation for text that involves representing a document as a
 multiset of its words. It is a very common way to represent documents and it has also been used
-recently in computer vision \citep{sivic2009efficient}.
+recently in computer vision \citep{sivic2009efficient}. Each document in a corpora is represented as
+a multiset of its words and all sets are combined to form a document-term matrix of the corpora. The
+rows represent each document while the columns represent the occurrence of a word in that document.
+To show how this works, let us assume we have the following documents:
+\begin{description}
+  \item[A] today is a sunny day
+  \item[B] it is a sunny day
+  \item[C] what a sunny day
+\end{description}
 
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|c|c c c c c c c|}
+      \hline
+      & today & what & it & is & a & sunny & day \\
+      \hline
+      A & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+      B & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+      C & 0 & 1 & 0 & 0 & 1 & 1 & 1 \\
+      \hline
+    \end{tabular}
+    \caption{A document-term matrix}
+    \label{table:document-term_matrix}
+  \end{center}
+\end{table}
+
+By the above definition, Table~\ref{table:document-term_matrix} will be an accurate representation
+of our sentences using the bag of words model. Note that in our example, each sentence is a document
+and all sentences form the corpora.
 
 \subsubsection{Training the initial classifier}
 
