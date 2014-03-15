@@ -1,11 +1,9 @@
 
-\chapter{Data Aggregation}
+\chapter{Data Classification}
+\label{sec:data_classification}
 First step towards this project is to fetch our data from Twitter. The data is classified into two
 groups, relevant and irrelevant. We will be spending most of our time with the relevant data.
 
-
-\section{Data Classification}
-\label{sec:data_classification}
 To carry out our experiments, we will need to filter out irrelevant tweets. Irrelevant tweets are
 tweets which we do not really care about. Some examples include:
 
@@ -27,7 +25,7 @@ Of course we can manually classify this data but when we have millions of tweets
 impracticable. This is where we employ some classification algorithms to assist us. This is a
 three step process and we will discuss them in the next sub sections.
 
-\subsection{Preparing train data}
+\section{Preparing train data}
 \begin{figure}
   \begin{center}
     \includegraphics[scale=0.6]{figures/datalabeller}
@@ -67,7 +65,7 @@ that we have to classify ourselves into a group. While this is not an assured wa
 best training set, it gives us a certain level of confidence about our training set. It is also
 arguably much better than single handedly creating the training set.
 
-\subsection{Training a classifier}
+\section{Training a classifier}
 As discussed in Section~\ref{sec:bg_naive_bayes}, a Na\"{i}ve Bayes Classifier is a probabilistic
 classifier which is based on the Bayes Theorem. We will train one and use it to classify the tweets
 into relevant and irrelevant groups.
@@ -77,7 +75,7 @@ actual text. This means we have to convert our tweets into a vector representati
 will be using the \textbf{bag of words model} in this study but before we transform the tweets, we
 have to pre-process the tweets.
 
-\subsubsection{Preprocessing}
+\subsection{Preprocessing}
 \label{sec:preprocessing}
 Preprocessing are the tasks we have to carry out before the main transformation of the tweets to a
 vector space model. Firstly, we will peruse through our tweets to remove new line characters, links
@@ -123,7 +121,7 @@ transforming them into the bag of words matrix representation. In the next secti
 into how the bag of words model works and then transform our tweets into this model.
 
 
-\subsubsection{Transforming tweets to bag-of-words}
+\subsection{Transforming tweets to bag-of-words}
 The bag of words model is a common representation for text that involves representing a document as
 a multiset of its words. It is a very common way to represent documents and it has also been used
 recently in computer vision \citep{sivic2009efficient}. All sets are combined to form a
@@ -158,8 +156,8 @@ and all sentences form the corpora.
 
 Now that we have converted our corpora into a bag of words representation, we will now use the
 resulting matrix to train our classifier.
-\subsubsection{Training the initial classifier}
+\subsection{Training the initial classifier}
 
 
-\subsubsection{Improving the classifier}
+\subsection{Improving the classifier}
 
