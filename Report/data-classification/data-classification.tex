@@ -162,19 +162,62 @@ resulting matrix to train our classifier.
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{figures/pr_NB_Tweets_Classifier_01}
-  \caption{AUC=74 without stopwords}
-  \label{fig:auc_no_stopwords}
+  \caption{AUC=74 with stopwords}
+  \label{fig:auc_with_stopwords}
   \end{subfigure}
   % =============
   \begin{subfigure}[b]{0.48\textwidth}
       \includegraphics[width=\textwidth]{figures/pr_NB_Tweets_Classifier_02}
-  \caption{AUC=76 with stopwords}
-  \label{fig:auc_with_stopwords}
+  \caption{AUC=76 without stopwords}
+  \label{fig:auc_without_stopwords}
   \end{subfigure}
 
 \caption{AUC curves with and without stopwords}
 \label{fig:auc_curves_stopwords}
 \end{figure}
+
+\begin{table}
+  \begin{subtable}{.5\linewidth}
+    \centering
+    \begin{tabular}{cccc} \toprule
+      accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
+      0.9875          & 0.0000        & 0.7387          & 0.0000 \\
+      0.9877          & 0.0002        & 0.7381          & 0.0000 \\
+      \textbf{0.9878} & 0.0002        & 0.7312          & 0.0090 \\
+      0.9877          & 0.0002        & 0.7412          & 0.0190 \\
+      \textbf{0.9878} & 0.0002        & 0.7454          & 0.0190 \\ \midrule
+      0.9876          & 0.0005        & 0.7394          & 0.0220 \\
+      0.9875          & 0.0005        & 0.7431          & 0.0220 \\
+      0.9874          & 0.0005        & 0.7427          & 0.0200 \\
+      0.9874          & 0.0005        & \textbf{0.7455} & 0.0210 \\
+      0.9873          & 0.0005        & 0.7454          & 0.0200 \\ \bottomrule
+    \end{tabular}
+      \caption{With stopwords}
+      \label{tab:data_with_stopwords}
+  \end{subtable}
+  % =======================
+  \begin{subtable}{.5\linewidth}
+    \centering
+    \begin{tabular}{cccc} \toprule
+      accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
+      \textbf{0.9908} & 0.0000        & 0.7526          & 0.0000 \\
+      0.9904          & 0.0004        & 0.7589          & 0.0060 \\
+      0.9903          & 0.0003        & 0.7485          & 0.0150 \\
+      0.9901          & 0.0004        & 0.7535          & 0.0160 \\
+      0.9901          & 0.0003        & 0.7572          & 0.0160 \\ \midrule
+      0.9901          & 0.0003        & 0.7582          & 0.0150 \\
+      0.9902          & 0.0004        & \textbf{0.7618} & 0.0160 \\
+      0.9901          & 0.0004        & 0.7587          & 0.0170 \\
+      0.9901          & 0.0004        & 0.7592          & 0.0160 \\
+      0.9900          & 0.0004        & 0.7572          & 0.0160 \\ \bottomrule
+    \end{tabular}
+      \caption{Without stopwords}
+      \label{tab:data_without_stopwords}
+  \end{subtable}
+\caption{Tables showing accuracy and AUC for 10-fold cross validation}
+\label{tab:all_data_tables}
+\end{table}
+
 
 
 \subsection{Improving the classifier}
