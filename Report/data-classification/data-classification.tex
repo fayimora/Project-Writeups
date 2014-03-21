@@ -157,6 +157,7 @@ and all sentences form the corpora.
 
 Now that we have converted our corpora into a bag of words representation, we will now use the
 resulting matrix to train our classifier.
+
 \subsection{Training the initial classifier}
 \begin{figure}
   \centering
@@ -222,18 +223,20 @@ resulting matrix to train our classifier.
 
 \subsection{Improving the classifier}
 \begin{figure}
-\begin{center}
-    \includegraphics[scale=0.6]{figures/pr_NB_Tweets_Classifier_03}
-\end{center}
-\caption{Area under the ROC curve for tf-idf weighted corpora}
-\label{fig:auc_tfidf}
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_03}
+  \caption{AUC curve for tf-idf weighted corpora}
+  \label{fig:auc_tfidf}
+  \end{subfigure}
+  % =============
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_04}
+  \caption{AUC curve for best found model}
+  \label{fig:auc_best_model}
+  \end{subfigure}
+
+  \caption{AUC curves for tf-idf weighted and best found models, resectively}
+  \label{fig:auc_curves_tfidf_grid}
 \end{figure}
 
-
-\begin{figure}
-\begin{center}
-    \includegraphics[scale=0.6]{figures/pr_NB_Tweets_Classifier_04}
-\end{center}
-\caption{Area under the ROC curve for best model}
-\label{fig:auc_best_model}
-\end{figure}
