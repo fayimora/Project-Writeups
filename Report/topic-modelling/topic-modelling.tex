@@ -4,8 +4,20 @@ In this chapter, we will try to find themes/topics that exist in our dataset. Ou
 be a set of relevant tweets as determined by the classifier in the previous chapter. We will use
 Latent Dirichlet Allocation as discussed in Section~\ref{sec:bg_lda} on page \pageref{sec:bg_lda}.
 
-\section{Analysing 20 topics}
-\label{sec:analysing_20_topics}
+Tables~\ref{tab:unigrams_bigrams_lda} and~\ref{tab:bigrams_lda} on pages
+\pageref{tab:unigrams_bigrams_lda} and \pageref{tab:bigrams_lda} each show a list of 20 topics and
+their respective topic-words distribution. Each row comprises of a list of tokens(n-grams) that try
+to explain a topic and they are ordered by their level of influence. While it is helpful to have our
+tokens ordered by level of influence, the actual influence weights are excluded from the table
+because we will not be paying too much attention to them during our analysis. We take a topic's
+token associations and analyse them as if they had equal weights and use the weights to handle any
+topic dilemmas.
+
+We will be analysing two separate models one of which will be using a mixture of unigrams and
+bigrams as tokens while the other will make use of bigrams as tokens. This was inspired by our
+experiments in \Sectionref{sec:training_classifier}. Our classifier showed better performance using
+a mixture of unigrams and bigrams as well as bigrams alone.
+
 \begin{table}
   \begin{tabular}{c p{16cm}} \toprule
     Topic & Topic-Words associations \\ \midrule
@@ -31,10 +43,6 @@ Latent Dirichlet Allocation as discussed in Section~\ref{sec:bg_lda} on page \pa
     19    & case, hashtag, end, 4s, black, bids, bids end, using, time, price \\ \midrule
   \end{tabular}
   \caption{list of 20 word-topic distributions}
-  \label{tab:20_topics}
+  \label{tab:unigrams_bigrams_lda}
 \end{table}
-
-\Tableref{tab:20_topics} on \Pageref{tab:20_topics} shows a list of 20 topics and their respective topic-words distribution.
-Each row comprises of a list of n-grams that try to explain a topic. The n-grams are ordered by
-influence.
 
