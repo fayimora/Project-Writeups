@@ -87,6 +87,14 @@ in the following sections.
 
 \subsection{Latent Semantic Indexing}
 \label{sub:bg_lsa}
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=1.5]{Figures/lda}
+\end{center}
+\caption{A graphical model representation of LDA}
+\label{fig:lda}
+\end{figure}
+
 Latent Semantic Indexing(LSI) \citep{hofmann1999probabilistic}, sometimes referred to as
 \textit{Latent Semantic Analysis}, is an indexing technique that leverages matrix-algebra
 computations\footnote{Specifically, it uses Singular Value Decomposition which is a factorization of
@@ -106,7 +114,7 @@ argues that while Hoffman's work is a very useful step towards using probabilist
 text, it is incomplete.
 
 \subsection{Latent Dirichlet Allocation}
-\label{sub:bg_lda}
+\label{sec:bg_lda}
 Latent Dirichlet Allocation(LDA) is a generative\footnote{See
 \url{http://en.wikipedia.org/wiki/Generative_model}} and probabilistic model that can be used to
 automatically group words into topics and documents into a mixture of topics \citep{blei2003latent}.
@@ -115,6 +123,28 @@ exist in multiple topics as they actually do in natural language. In other to ta
 ambiguity in LSI, Latent Dirichlet Allocation takes a combination of all topics that seem relevant
 to a document in a corpora\footnote{Corpora is simply a large collection of documents} and compares
 that document to the topics in an effort to determine which topic is more closer to the document.
+\Figref{fig:lda} shows a graphical model representation of Latent Dirichlet Allocation. The inner
+boxes represents the choice of topics and words within a document while the outer box represents the
+actual documents.
+
+\citet{hoffman2010online} developed a variant of LDA called Online LDA which uses variational
+Bayes as its posterior inference algorithm as opposed to Gibbs Sampling. It also allows the model to
+be updated with more data after initial training. During initial training, the entire corpora is
+observed/trained in batches rather than at once. \citet{asuncion2009smoothing} shows that although
+this model uses constant memory and it converges quicker, it still requires a full pass through the
+entire corpora. This makes it very slow when applied to large datasets.
+
+An oversimplified version of the algorithm is:\\
+\begin{algorithm}[H]
+  \While{model is yet to converge} {%
+    \KwData{$B =$ randomly selected mini-batch of documents\;}
+    \For{$b\in B$}{%
+      Estimate approximate posterior over what topics each word in each document came from;\\
+      Update posterior over topic distributions based on what words are believed to have come from
+      what topics;\\
+    }
+  }
+\end{algorithm}
 
 Most of the research done on social media data, especially Twitter, has been to detect usage and
 communities \citep{java2007we}. Nonetheless, recent research has started to look into the detection
@@ -123,5 +153,6 @@ collection of disaster related tweets. \citet{zhao2011comparing} used LDA to com
 tweets on Twitter with topics in The New York Times. They were also able to show that the standard
 LDA might not always work well on tweets and so they proposed a new model which is a slight variant
 of LDA. \citet{weng2010twitterrank} proposed an algorithm that leverages LDA to find topic-sensitive
-influential twitter users.
+influential twitter users. \citet{lau2012line} presented an LDA-based model for detecting and
+tracking emerging trends/events on microblogs like Twitter.
 
