@@ -2,7 +2,7 @@
 \label{cha:topic_modelling}
 In this chapter, we will try to find themes/topics that exist in our dataset. Our input dataset will
 be a set of relevant tweets as determined by the classifier in the previous chapter. We will use
-Latent Dirichlet Allocation as discussed in Section~\ref{sec:bg_lda} on page \pageref{sec:bg_lda}.
+Latent Dirichlet Allocation as discussed in \Sectionref{sec:bg_lda} on page \pageref{sec:bg_lda}.
 
 Tables~\ref{tab:unigrams_bigrams_lda} and~\ref{tab:bigrams_lda} on pages
 \pageref{tab:unigrams_bigrams_lda} and \pageref{tab:bigrams_lda} each show a list of 20 topics and
@@ -13,11 +13,17 @@ because we will not be paying too much attention to them during our analysis. We
 token associations and analyse them as if they had equal weights and use the weights to handle any
 topic dilemmas.
 
+\section{Analysing per-topic word distribution}
+\label{sec:analysing_topic_word_distribution}
 We will be analysing two separate models one of which will be using a mixture of unigrams and
 bigrams as tokens while the other will make use of bigrams as tokens. This was inspired by our
 experiments in \Sectionref{sec:training_classifier}. Our classifier showed better performance using
-a mixture of unigrams and bigrams as well as bigrams alone.
+a mixture of unigrams and bigrams as well as bigrams alone. We will analyse a few topics for each
+model and have a look at some of the tweets that fall under those topics.
 
+
+\subsection{Using Unigrams and Bigrams}
+\label{sec:using_bigrams}
 \begin{table}
   \begin{tabular}{c p{16cm}} \toprule
     Topic & Topic-Words associations \\ \midrule
@@ -40,9 +46,65 @@ a mixture of unigrams and bigrams as well as bigrams alone.
     16    & lets, itunes, downloadtoyboysingle, link, itunes link, downloadtoyboysingle itunes, halloween, finally, check, just, \\ \midrule
     17    & bbm android, android, automatically, halloween, store, love, street, know, app, don, \\ \midrule
     18    & ios, apps, lets apps, ios lets, bbm ios, features, visit, app, spree, store, \\ \midrule
-    19    & case, hashtag, end, 4s, black, bids, bids end, using, time, price \\ \midrule
+    19    & case, hashtag, end, 4s, black, bids, bids end, using, time, price \\ \bottomrule
   \end{tabular}
-  \caption{list of 20 word-topic distributions}
+  \caption{list of 20 word-topic distributions with unigrams and bigrams}
   \label{tab:unigrams_bigrams_lda}
 \end{table}
+
+The topic-word distributions in \Tableref{tab:unigrams_bigrams_lda} are a combination of unigrams
+and bigrams. We will analyse Topics 0, 2, 4, 11 and 13.
+
+
+\subsubsection{Topic 0}
+\label{sec:topic_0}
+\textit{bbm, android bbm, features bbm, perfect features, android, future, surveillance, happy, lt,
+having}
+
+\subsubsection{Topic 2}
+\label{sec:topic_2}
+\textit{win, enter, 100, today, halloween use, mini, free, halloween, video, want}
+
+\subsubsection{Topic 4}
+\label{sec:topic_4}
+\textit{release, official release, air, got, charger, usa, life, just, fuck, work}
+
+\subsubsection{Topic 11}
+\label{sec:topic_11}
+\textit{sales, tech, air, thing, news, people, tell, air sales, remains unknown, mini remains}
+
+\subsubsection{Topic 13}
+\label{sec:topic_13}
+\textit{ll, like, chocolate, white, caramel, girls, dark, double, raspberry, mocha}
+
+\subsection{Using only Bigrams}
+\label{sec:using_bigrams}
+\begin{table}
+  \begin{tabular}{c p{16cm}} \toprule
+    Topic & Topic-Words associations \\ \midrule
+    0     & people going, uk win, got new, just got, energy doing, lose energy, new air, like lose, just kind, google partners \\ \midrule
+    1     & 99 free, app 99, games app, don charger, charger iphoneprobz, video app, photo amp, entertainment app, review air \\ \midrule
+    2     & video team, wild craics, team wild, soml video, turning device, stores turning, fandom store, just 25, air adoption, giving away \\ \midrule
+    3     & started shouting, retweet tfbjp, tfbjp teamfairyrose, excited try, try thank, thank maccosmetics, app store, autofollow android, teamfairyrose 500aday, alice wonderland \\ \midrule
+    4     & stores just, end date, funny die, bids end, beat record, help beat, record just, wanted help, os mavericks, date monday \\ \midrule
+    5     & tim cook, emabiggestfans direction, story life, pre order, anti gay, gt gt, right anti, gay policies, cook right, policies hurt \\ \midrule
+    6     & going stores, bad day, 5s 5c, ibooks safari, god google, safari remote, free ios, game jetpackjoyride, threw head, win 5s \\ \midrule
+    7     & count views, better count, video wrong, dlrtbag better, computer laptop, air review, buy rate, rate gift, promoting soml, directioners promoting \\ \midrule
+    8     & views video, buy badday, windows phone, phone siri, eye phone, siri spelled, illuminati phone, spelled backwards, phone illuminati, iris thats \\ \midrule
+    9     & screen touches, year 2060, released screen, 2060 842, 842 released, unfollowed using, using app, backwards iris, app tweepr, justin bieber \\ \midrule
+    10    & ceo tim, users just, just unfollowed, unfollowed app, girls like, white girls, dark chocolate, ugg boot, triple mocha, mocha dark \\ \midrule
+    11    & played soml, store just, device soml, die just, movies gt, soml store, buy bad, look like, pc macbook, macbook girl \\ \midrule
+    12    & badday itunes, amp follow, chance win, bids end, end time, god bless, usd bids, itunes buybaddayonitunes, 2013 11, follow hurry \\ \midrule
+    13    & win amp, uk cases, follow london, battery life, signed uk, cases boi, boi uk, london win, app store, don know \\ \midrule
+    14    & going shove, just break, opened soml, record fandom, soml stores, fandom opened, available itunes, win mini, girl went, record vevogiveusour13millionviewsback \\ \midrule
+    15    & air times, times popular, went stores, britney jean, order britney, buyperfumeonitunes britneyjeanpreordernow, britneyjeanpreordernow pre, retweet buyperfumeonitunes, new single, gift rate \\ \midrule
+    16    & 25 new, new cost, cost 5f, 5f watch, store did, mail ibooks, love new, 5c 5s, working fixes, fixes mavericks \\ \midrule
+    17    & vevo record, android ios, use code, card android, problems use, monsters problems, rare card, break vevo, omg girl, remember time \\ \midrule
+    18    & went store, break record, store played, wrong going, soml break, soml emabiggestfans, fandom vevogiveusour13millionviewsback, store soml, laptop security, security started \\ \midrule
+    19    & soml computer, just followed, users just, awesome users, followed app, itunes right, play soml, guys went, chargers called, liked video \\ \bottomrule
+  \end{tabular}
+  \caption{list of 20 word-topic distributions with bigrams}
+  \label{tab:bigrams_lda}
+\end{table}
+
 
