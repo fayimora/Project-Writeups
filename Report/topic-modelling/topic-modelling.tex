@@ -71,11 +71,33 @@ and bigrams.
 \textit{bbm, bbm android, official release, android official, android bbm, perfect features, features bbm,
 want, buy, need} \\\\
 At first glance, we could say this topic has a lot to do with \textit{android}, \textit{bbm}, and
-\textit{features}. At the time of data gathering, there was a lot of chatter on social media about
-the blackberry messenger coming to the android platform. To be certain of this, let's take a look at
-some of the tweets that fall into this category.
-%
-%
+\textit{features}. The last three tokens also seem out of place. At the time of data gathering,
+there was a lot of chatter on social media about the BlackBerry Messenger(BBM) coming to the iOS and
+android platform. To be certain of this, let's take a look at some of the tweets that fall into this
+category.\\
+
+\begin{table}[H]
+  \begin{tabular}{c c p{13cm}} \toprule
+    No & Proportion & Tweet \\ \midrule
+    1 & 56\% & More perfect features, BBM android, BBM iPhone \\ \midrule
+    2 & 50\% & BBM on android and iPhone, official release - get it here \\ \midrule
+    3 & 50\% & BBM Now on Android and iPhone. \\ \midrule
+    4 & 72\% & Just got bbm chat for the iPhone, feel free to add me if you want :) \\ \midrule
+    5 & 60\% & Apple should create the option of removing yourself from a group chat \\ \midrule
+    6 & 68\% & Anyone want to buy a black 64GB ipad 2 from me in excellent condition? \\ \midrule
+    7 & 25\% & someone buy me an iphone ugh \\ \midrule
+    8 & 76\% & i need a iphone 5 asap \\ \bottomrule
+  \end{tabular}
+  \caption{Tweets classified under topic 27}
+  \label{tab:tweets_under_27}
+\end{table}
+
+\Tableref{tab:tweets_under_27} is a list of tweets that fall under topic 27. We can see that the
+first four tweets have a lot to do with the new BBM for iOS and Android. The fifth tweet is a little
+tricky as it says nothing about BBM\@. However, it does infact talk about a chat application which is
+what BBM is. While the user might not have been referring to BBM in particular, our model was able
+to pickup on the relationship between both subjects.
+
 % \subsection{Using only Bigrams}
 % \label{sec:using_bigrams}
 % \begin{table}
@@ -105,5 +127,5 @@ some of the tweets that fall into this category.
 %   \caption{list of 20 word-topic distributions with bigrams}
 %   \label{tab:bigrams_lda}
 % \end{table}
-%
-%
+
+
