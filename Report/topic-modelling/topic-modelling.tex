@@ -26,120 +26,84 @@ model and have a look at some of the tweets that fall under those topics.
 \begin{table}
   \begin{tabular}{c p{16cm}} \toprule
     Topic & Topic-Words associations \\ \midrule
-    0     & right, count views, computer, new, just, make, bad, omg, bad day, watch \\ \midrule
-    1     & free, app, 99, 99 free, app 99, games app, ios, amp, shouting, video \\ \midrule
-    2     & store, just, app, stores, users, users just, stores just, unfollowed, store just, awesome \\ \midrule
-    3     & record, video, rate, gold, 5s, thanks, sales, girl, latest, design \\ \midrule
-    4     & break, android, break record, views, vevogiveusour13millionviewsback, shove, going shove, dlrtbag, better count, video wrong \\ \midrule
-    5     & people, charger, device, need, laptop, guys, direction, did, emabiggestfans, emabiggestfans direction \\ \midrule
-    6     & new, gt, best, help, cases, weekend, air, game, away, followers \\ \midrule
-    7     & life, battery, look, directioners, order, pre, pre order, pc, win amp, battery life \\ \midrule
-    8     & like, ll, christmas, white, doing, girls, justin, chocolate, double, dark \\ \midrule
-    9     & played, count, god, apps, use, remember, kind, bless, wanna, dont \\ \midrule
-    10    & fandom, got, just break, just, case, wrong, mini, gift, new, win \\ \midrule
-    11    & day, vevo, using, samsung, beat, 25, tablet, cost, ip, 5f \\ \midrule
-    12    & 5s, want, win, amp, follow, air, 5c, mini, giveaway, chance \\ \midrule
-    13    & , end, air, 4s, bids, times, price, black, bids end, date \\ \midrule
-    14    & use, ios, android, opened, google, code, card, problems, wild, rare \\ \midrule
-    15    & wrong going, story, time, play, amp, eat, id, idk, fun, lot \\ \midrule
-    16    & work, like, hate, juice, chargers, support, photo, does, week, didn \\ \midrule
-    17    & buy, went store, itunes, badday, badday itunes, buy badday, new, buybaddayonitunes, adoption, ran \\ \midrule
-    18    & soml, went, played soml, store played, opened soml, soml break, vevo record, break vevo, soml video, going stores \\ \midrule
-    19    & going, don, better, lol, good, phone, cook, tim, tim cook, kno \\ \bottomrule
+    0     & app, latest, generation, version, galaxy, won, set, oh, save, minute \\ \midrule
+    1     & walk, watching, unveils, today stories, beat rivals, ipads beat, missed unveils, revamped, revamped ipads, rivals \\ \midrule
+    2     & perfect, case, 16gb, black, gt, giving, clean, smartphone, ya, pink \\ \midrule
+    3     & screen, place, http, better, place visit, visit gameinsight, entirely, electronic \\ \midrule
+    4     & video, love, app android, yay, tomorrow, let, liked, liked video, operating, single \\ \midrule
+    5     & complete, follow, managed, week, having, girls, device, task, complete task, managed complete \\ \midrule
+    6     & ios, lets, bbm ios, ios lets, lets apps, features, game, , tech, missed \\ \midrule
+    7     & google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed rockstar, uses \\ \midrule
+    8     & using, world, best, hate, beat, skips, skips africa, africa, africa world, release 5s \\ \midrule
+    9     & music, 10, mavericks, number, yes, coming, soon, earn, cards, support \\ \midrule
+    10    & new, app, store, available, design, playing, stargazing, stargazing app, new design, android applenews \\ \midrule
+    11    & really, os, gift, stores, hours, news, fail, stores piss, piss, broken \\ \midrule
+    12    & day, battery, good, shit, display, thanks, battery life, omg, seriously, ios7 \\ \midrule
+    13    & android, use, blackberry, update, web, 11, issues, devices, hd, fix issues \\ \midrule
+    14    & official, 5s, 5c, life, models, cracked, color, worries, nexus, highlighters \\ \midrule
+    15    & know, pc, 4s, old, does, releases, air saywhatnow, releases air, saywhatnow, did \\ \midrule
+    16    & time, ll, date, wonderful, charger, working, nice, message, cell, took \\ \midrule
+    17    & got, today, ve, going, smart, help, protector, hell, screen protector, got new \\ \midrule
+    18    & samsung, don, download, updated, people, radio, meet, ft, updated ios, malware jumps \\ \midrule
+    19    & nsa, microsoft, facebook google, google substantial, nsa surveillance, reform, reform nsa, substantial, substantial reform, surveillance \\ \midrule
+    20    & lol, education, chocolate, team, double, wait, boot, white girls, girls like, couple days \\ \midrule
+    21    & air, free, visit, power, satisfaction, 99 free, app 99, power tablet, tops, war \\ \midrule
+    22    & release, like, new, facebook, big, make, new 5s, gadgets, product, brand \\ \midrule
+    23    & just, white, app, gold, users, gold 5s, awesome, way, unfollowed, link \\ \midrule
+    24    & verizon, laptop, finally, say, dont, years, getting, ready, costumes, lost \\ \midrule
+    25    & apps, phone, check, ip, cause, thank, hope, dad, im, gt gt \\ \midrule
+    26    & gameinsight, halloween, try, retweet, giveaway, win, work, try gameinsight, days, tweet \\ \midrule
+    27    & bbm, bbm android, official release, android official, android bbm, perfect features, features bbm, want, buy, need \\ \midrule
+    28    & mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models, models red \\ \midrule
+    29    & itunes, released, think, year, great, touches, album, downloadtoyboysingle, didn, eas \\ \bottomrule
   \end{tabular}
-  \caption{list of 20 word-topic distributions with unigrams and bigrams}
+  \caption{list of 30 word-topic distributions with unigrams and bigrams}
   \label{tab:unigrams_bigrams_lda}
 \end{table}
-
-% \begin{table}
-%   \begin{tabular}{c p{16cm}} \toprule
-%     Topic & Topic-Words associations \\ \midrule
-%     0     & bbm, android bbm, features bbm, perfect features, android, future, surveillance, happy, lt, having, \\ \midrule
-%     1     & air, google, air takes, buy, year, screen, new, reform, released, reform nsa, \\ \midrule
-%     2     & win, enter, 100, today, halloween use, mini, free, halloween, video, want, \\ \midrule
-%     3     & enjoy, enjoy halloween, nsa, download, nsa surveillance, app, tablet, free, just, game, \\ \midrule
-%     4     & release, official release, air, got, charger, usa, life, just, fuck, work, \\ \midrule
-%     5     & 5c, app, free, sale, air, available, 5s, 99, wanna, learn, \\ \midrule
-%     6     & 5s, gold, gold 5s, use, automatically enter, use 100, win gold, 100 today, today automatically, 5s visit, \\ \midrule
-%     7     & samsung, power, tablet, including, christmas, guess, express, f4f, kick, power tablet, \\ \midrule
-%     8     & facebook, new, receiving, air receiving, glowing reviews, receiving glowing, glowing, like, google facebook, reviews wall, \\ \midrule
-%     9     & bbm, official, android official, android, lol, dm, don, getting, let, phone, \\ \midrule
-%     10    & amp, follow, retweet, enter win, tweet, retweet amp, spree retweet, post tweet, hashtag downloadtoyboysingle, amp post, \\ \midrule
-%     11    & sales, tech, air, thing, news, people, tell, air sales, remains unknown, mini remains, \\ \midrule
-%     12    & just, app, users, users just, use, awesome, just unfollowed, unfollowed, unfollowed app, newmusic, \\ \midrule
-%     13    & ll, like, chocolate, white, caramel, girls, dark, double, raspberry, mocha, \\ \midrule
-%     14    & perfect, takes, mini, said, , tonight, retina, kids, direction, launches, \\ \midrule
-%     15    & post, tweet hashtag, time, macbook, new, pro, laptop, week, old, remember, \\ \midrule
-%     16    & lets, itunes, downloadtoyboysingle, link, itunes link, downloadtoyboysingle itunes, halloween, finally, check, just, \\ \midrule
-%     17    & bbm android, android, automatically, halloween, store, love, street, know, app, don, \\ \midrule
-%     18    & ios, apps, lets apps, ios lets, bbm ios, features, visit, app, spree, store, \\ \midrule
-%     19    & case, hashtag, end, 4s, black, bids, bids end, using, time, price \\ \bottomrule
-%   \end{tabular}
-%   \caption{list of 20 word-topic distributions with unigrams and bigrams}
-%   \label{tab:unigrams_bigrams_lda}
-% \end{table}
+%analyse 6, 7, 9, 12, 13, 14, 22, 27, 28
 
 The topic-word distributions in \Tableref{tab:unigrams_bigrams_lda} are a combination of unigrams
-and bigrams. We will analyse Topics 0, 2, 4, 11 and 13.
+and bigrams.
 
 
-\subsubsection{Topic 0}
-\label{sec:topic_0}
-\textit{bbm, android bbm, features bbm, perfect features, android, future, surveillance, happy, lt,
-having}
+\subsubsection{Topic 27}
+\label{sec:topic_27}
+\textit{bbm, bbm android, official release, android official, android bbm, perfect features, features bbm,
+want, buy, need} \\\\
 At first glance, we could say this topic has a lot to do with \textit{android}, \textit{bbm}, and
 \textit{features}. At the time of data gathering, there was a lot of chatter on social media about
 the blackberry messenger coming to the android platform. To be certain of this, let's take a look at
 some of the tweets that fall into this category.
-
-\subsubsection{Topic 2}
-\label{sec:topic_2}
-\textit{win, enter, 100, today, halloween use, mini, free, halloween, video, want}
-% Promotions to win stuff
-
-\subsubsection{Topic 4}
-\label{sec:topic_4}
-\textit{release, official release, air, got, charger, usa, life, just, fuck, work}
-% ipad air release
-
-\subsubsection{Topic 11}
-\label{sec:topic_11}
-\textit{sales, tech, air, thing, news, people, tell, air sales, remains unknown, mini remains}
-% December sales? iPad air sales?
-
-\subsubsection{Topic 13}
-\label{sec:topic_13}
-\textit{ll, like, chocolate, white, caramel, girls, dark, double, raspberry, mocha}
-% Sterotypical tweets? Flavours?
-
-\subsection{Using only Bigrams}
-\label{sec:using_bigrams}
-\begin{table}
-  \begin{tabular}{c p{16cm}} \toprule
-    Topic & Topic-Words associations \\ \midrule
-    0     & people going, uk win, got new, just got, energy doing, lose energy, new air, like lose, just kind, google partners \\ \midrule
-    1     & 99 free, app 99, games app, don charger, charger iphoneprobz, video app, photo amp, entertainment app, review air \\ \midrule
-    2     & video team, wild craics, team wild, soml video, turning device, stores turning, fandom store, just 25, air adoption, giving away \\ \midrule
-    3     & started shouting, retweet tfbjp, tfbjp teamfairyrose, excited try, try thank, thank maccosmetics, app store, autofollow android, teamfairyrose 500aday, alice wonderland \\ \midrule
-    4     & stores just, end date, funny die, bids end, beat record, help beat, record just, wanted help, os mavericks, date monday \\ \midrule
-    5     & tim cook, emabiggestfans direction, story life, pre order, anti gay, gt gt, right anti, gay policies, cook right, policies hurt \\ \midrule
-    6     & going stores, bad day, 5s 5c, ibooks safari, god google, safari remote, free ios, game jetpackjoyride, threw head, win 5s \\ \midrule
-    7     & count views, better count, video wrong, dlrtbag better, computer laptop, air review, buy rate, rate gift, promoting soml, directioners promoting \\ \midrule
-    8     & views video, buy badday, windows phone, phone siri, eye phone, siri spelled, illuminati phone, spelled backwards, phone illuminati, iris thats \\ \midrule
-    9     & screen touches, year 2060, released screen, 2060 842, 842 released, unfollowed using, using app, backwards iris, app tweepr, justin bieber \\ \midrule
-    10    & ceo tim, users just, just unfollowed, unfollowed app, girls like, white girls, dark chocolate, ugg boot, triple mocha, mocha dark \\ \midrule
-    11    & played soml, store just, device soml, die just, movies gt, soml store, buy bad, look like, pc macbook, macbook girl \\ \midrule
-    12    & badday itunes, amp follow, chance win, bids end, end time, god bless, usd bids, itunes buybaddayonitunes, 2013 11, follow hurry \\ \midrule
-    13    & win amp, uk cases, follow london, battery life, signed uk, cases boi, boi uk, london win, app store, don know \\ \midrule
-    14    & going shove, just break, opened soml, record fandom, soml stores, fandom opened, available itunes, win mini, girl went, record vevogiveusour13millionviewsback \\ \midrule
-    15    & air times, times popular, went stores, britney jean, order britney, buyperfumeonitunes britneyjeanpreordernow, britneyjeanpreordernow pre, retweet buyperfumeonitunes, new single, gift rate \\ \midrule
-    16    & 25 new, new cost, cost 5f, 5f watch, store did, mail ibooks, love new, 5c 5s, working fixes, fixes mavericks \\ \midrule
-    17    & vevo record, android ios, use code, card android, problems use, monsters problems, rare card, break vevo, omg girl, remember time \\ \midrule
-    18    & went store, break record, store played, wrong going, soml break, soml emabiggestfans, fandom vevogiveusour13millionviewsback, store soml, laptop security, security started \\ \midrule
-    19    & soml computer, just followed, users just, awesome users, followed app, itunes right, play soml, guys went, chargers called, liked video \\ \bottomrule
-  \end{tabular}
-  \caption{list of 20 word-topic distributions with bigrams}
-  \label{tab:bigrams_lda}
-\end{table}
-
-
+%
+%
+% \subsection{Using only Bigrams}
+% \label{sec:using_bigrams}
+% \begin{table}
+%   \begin{tabular}{c p{16cm}} \toprule
+%     Topic & Topic-Words associations \\ \midrule
+%     0     & people going, uk win, got new, just got, energy doing, lose energy, new air, like lose, just kind, google partners \\ \midrule
+%     1     & 99 free, app 99, games app, don charger, charger iphoneprobz, video app, photo amp, entertainment app, review air \\ \midrule
+%     2     & video team, wild craics, team wild, soml video, turning device, stores turning, fandom store, just 25, air adoption, giving away \\ \midrule
+%     3     & started shouting, retweet tfbjp, tfbjp teamfairyrose, excited try, try thank, thank maccosmetics, app store, autofollow android, teamfairyrose 500aday, alice wonderland \\ \midrule
+%     4     & stores just, end date, funny die, bids end, beat record, help beat, record just, wanted help, os mavericks, date monday \\ \midrule
+%     5     & tim cook, emabiggestfans direction, story life, pre order, anti gay, gt gt, right anti, gay policies, cook right, policies hurt \\ \midrule
+%     6     & going stores, bad day, 5s 5c, ibooks safari, god google, safari remote, free ios, game jetpackjoyride, threw head, win 5s \\ \midrule
+%     7     & count views, better count, video wrong, dlrtbag better, computer laptop, air review, buy rate, rate gift, promoting soml, directioners promoting \\ \midrule
+%     8     & views video, buy badday, windows phone, phone siri, eye phone, siri spelled, illuminati phone, spelled backwards, phone illuminati, iris thats \\ \midrule
+%     9     & screen touches, year 2060, released screen, 2060 842, 842 released, unfollowed using, using app, backwards iris, app tweepr, justin bieber \\ \midrule
+%     10    & ceo tim, users just, just unfollowed, unfollowed app, girls like, white girls, dark chocolate, ugg boot, triple mocha, mocha dark \\ \midrule
+%     11    & played soml, store just, device soml, die just, movies gt, soml store, buy bad, look like, pc macbook, macbook girl \\ \midrule
+%     12    & badday itunes, amp follow, chance win, bids end, end time, god bless, usd bids, itunes buybaddayonitunes, 2013 11, follow hurry \\ \midrule
+%     13    & win amp, uk cases, follow london, battery life, signed uk, cases boi, boi uk, london win, app store, don know \\ \midrule
+%     14    & going shove, just break, opened soml, record fandom, soml stores, fandom opened, available itunes, win mini, girl went, record vevogiveusour13millionviewsback \\ \midrule
+%     15    & air times, times popular, went stores, britney jean, order britney, buyperfumeonitunes britneyjeanpreordernow, britneyjeanpreordernow pre, retweet buyperfumeonitunes, new single, gift rate \\ \midrule
+%     16    & 25 new, new cost, cost 5f, 5f watch, store did, mail ibooks, love new, 5c 5s, working fixes, fixes mavericks \\ \midrule
+%     17    & vevo record, android ios, use code, card android, problems use, monsters problems, rare card, break vevo, omg girl, remember time \\ \midrule
+%     18    & went store, break record, store played, wrong going, soml break, soml emabiggestfans, fandom vevogiveusour13millionviewsback, store soml, laptop security, security started \\ \midrule
+%     19    & soml computer, just followed, users just, awesome users, followed app, itunes right, play soml, guys went, chargers called, liked video \\ \bottomrule
+%   \end{tabular}
+%   \caption{list of 20 word-topic distributions with bigrams}
+%   \label{tab:bigrams_lda}
+% \end{table}
+%
+%
