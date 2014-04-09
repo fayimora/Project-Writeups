@@ -13,6 +13,11 @@ because we will not be paying too much attention to them during our analysis. We
 token associations and analyse them as if they had equal weights and use the weights to handle any
 topic dilemmas.
 
+\section{Preprocessing}
+\label{sec:lda_preprocessing}
+% TODO: Complete this section
+
+
 \section{Analysing per-topic word distribution}
 \label{sec:analysing_topic_word_distribution}
 We will be analysing two separate models one of which will be using a mixture of unigrams and
@@ -23,6 +28,9 @@ model and have a look at some of the tweets that fall under those topics.
 
 \subsection{Using Unigrams and Bigrams}
 \label{sec:unigrams_bigrams_lda}
+The topic-word distributions in \Tableref{tab:unigrams_bigrams_lda} are a combination of unigrams
+and bigrams.
+
 \begin{table}
   \begin{tabular}{c p{16cm}} \toprule
     Topic & Topic-Words associations \\ \midrule
@@ -32,7 +40,7 @@ model and have a look at some of the tweets that fall under those topics.
     3     & screen, place, http, better, place visit, visit gameinsight, entirely, electronic \\ \midrule
     4     & video, love, app android, yay, tomorrow, let, liked, liked video, operating, single \\ \midrule
     5     & complete, follow, managed, week, having, girls, device, task, complete task, managed complete \\ \midrule
-    6     & ios, lets, bbm ios, ios lets, lets apps, features, game, , tech, missed \\ \midrule
+    6     & ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed \\ \midrule
     7     & google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed rockstar, uses \\ \midrule
     8     & using, world, best, hate, beat, skips, skips africa, africa, africa world, release 5s \\ \midrule
     9     & music, 10, mavericks, number, yes, coming, soon, earn, cards, support \\ \midrule
@@ -62,8 +70,52 @@ model and have a look at some of the tweets that fall under those topics.
 \end{table}
 %analyse 6, 7, 9, 12, 13, 14, 22, 27, 28
 
-The topic-word distributions in \Tableref{tab:unigrams_bigrams_lda} are a combination of unigrams
-and bigrams.
+% \begin{table}[H]
+%   \begin{tabular}{c c p{13cm}} \toprule
+%     No & Proportion & Tweet \\ \midrule
+%     1  & \%       & \\ \midrule
+%     2  & \%       & \\ \midrule
+%     3  & \%       & \\ \midrule
+%     4  & \%       & \\ \midrule
+%     5  & \%       & \\ \midrule
+%     6  & \%       & \\ \midrule
+%     7  & \%       & \\ \midrule
+%     8  & \%       & \\ \bottomrule
+%   \end{tabular}
+%   \caption{Tweets classified under topic 6}
+%   \label{tab:tweets_under_6}
+% \end{table}
+
+\subsubsection{Topic 6}
+\label{sec:topic_6}
+\textit{ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed} \\\\
+The most common theme in the above distribution is ``ios'' and ``lets''. ``bbm'' also seems to have
+a considerate amount of relevancy as it is the third most relevant token. The other tokens seem
+random but we should be able to explain them better after taking a look at some of the tweets with a
+fair proportion of this topic.
+
+\begin{table}[H]
+  \begin{tabular}{c c p{13cm}} \toprule
+    No & Proportion & Tweet \\ \midrule
+    1  & 81\%       & Fantastical 2 for iPhone gets bold iOS 7 redesign, many new features \#tech \\ \midrule
+    2  & 75\%       & Limbo for iOS is now even cheaper at \$0.99 \\ \midrule
+    3  & 80\%       & Don't miss out on loads of great iOS game sales from\ldots \\ \midrule
+    4  & 70\%       & What new features does Apple's iOS 7 boast? \\ \midrule
+    5  & 63\%       & get the BBM on iPhone iOS, lets get the apps here now \\ \midrule
+    6  & 89\%       & time guessing is hard! test yourself on ur iPhone it's \#cool tweet your
+    results from the app \#game \#ios \#app \\ \bottomrule
+  \end{tabular}
+  \caption{Tweets classified under topic 6}
+  \label{tab:tweets_under_6}
+\end{table}
+
+The tweets in \Tableref{tab:tweets_under_6} all seem to have at least 63\% of topic 6. While they
+might look like carefully selected tweets, they were actually chosen at random. Our dataset contains
+a large fraction of the third, fourth and fifth tweet. Approximately 90\% of them are retweets which
+explains why our topic model extracted ``ios lets'', ``lets apps'', ``game'' and ``tech'' as
+relevant tokens. The sixth tweet arguably does not really have anything to do with ``iOS'' but
+because it has been tagged with three words that our topic model finds salient, it gets tagged as
+having 89\% proportion of topic 6.
 
 
 \subsubsection{Topic 27}
@@ -98,7 +150,7 @@ tricky as it says nothing about BBM\@. However, it does in fact talk about a cha
 what BBM is. While the user might not have been referring to BBM in particular, our model was able
 to pickup on the relationship between both subjects.
 
-The last three tweets in out table explain the last three tokens in out topic-word distribution for
-topic 27.
+The last three tweets in our table explain the last three tokens in out topic-word distribution for
+topic 27. This means that topic 27 is actually a combination of two different topics.
 
 
