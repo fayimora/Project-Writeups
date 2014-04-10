@@ -154,6 +154,12 @@ rockstar, uses } \\\\
 \subsubsection{Topic 12}
 \label{sec:topic_12}
 \textit{day, battery, good, shit, display, thanks, battery life, omg, seriously, ios7}\\\\
+The most salient token we have is ``day'' which does not mean much to us. Our token-distribution
+also seems to have a number of adverbs, adjectives and slang like ``good'', ``seriously'' and
+``omg''. These all seem to represent sentiments towards a certain topic. Ignoring them, we are left
+with ``thanks'', ``battery'' and ``battery life''. At this point, we could postulate that most of
+the tweets in this category will have a ``battery'' theme. To confirm this, we take a look at some
+of the tweets with a fair proportion of the topic.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
@@ -171,28 +177,42 @@ rockstar, uses } \\\\
   \label{tab:tweets_under_12}
 \end{table}
 
+All tweets(except the 7th) in \Tableref{tab:tweets_under_12} all refer to the iPhone battery life. A
+very large number of tweets that have a good proportion of this topic take in some way, the shape of
+tweets 1--4 in our table and fortunately, our topic model is able to find the relationship between
+these tweets.
+
+The seventh tweet looks out of place as it has nothing to do with battery life but
+going back to our topic-token distribution, the most salient token as described by the model is
+``day''. Luckily, our dataset also contains a large number of that tweet. This is because that
+articular tweets was retweeted a lot of times.
 
 
 \subsubsection{Topic 13}
 \label{sec:topic_13}
 \textit{android, use, blackberry, update, web, 11, issues, devices, hd, fix issues}\\\\
+At first glance, the main themes that stand out in the above distribution are ``android'',
+``blackberry'' and ``issues''.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
     No & Proportion & Tweet \\ \midrule
-    1  & \%       & \\ \midrule
-    2  & \%       & \\ \midrule
-    3  & \%       & \\ \midrule
-    4  & \%       & \\ \midrule
-    5  & \%       & \\ \midrule
-    6  & \%       & \\ \midrule
-    7  & \%       & \\ \midrule
-    8  & \%       & \\ \bottomrule
+    1  & 51\%       & Wow hello typos\ldots cracked iphone screen problems \\ \midrule
+    2  & 50\%       & Check out WhatsApp Messenger for BlackBerry, Android, iPhone, Nokia and Windows Phone. Download it today from\ldots \\ \midrule
+    3  & 50\%       & Pandora finally comes to Chromecast via Android and iPhone apps \\ \midrule
+    4  & 80\%       & I just connected with friends on \#BBM\@. Invite your BlackBerry, Android and iPhone friends at\ldots \\ \midrule
+    5  & 80\%       & Develop iPhone, Ipad and Android Apps creatively with Mawaqaa. \\ \midrule
+    6  & 75\%       & Was curious if that was the culprit. I have had tons of issues since upgrading my Apple devices to latest \\ \midrule
+    7  & 57\%       & Apple testing Mail update for OS X Mavericks to fix several issues \\ \midrule
+    8  & 78\%       & Manufacturing issue causing battery problems in some iPhone 5s devices \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 13}
   \label{tab:tweets_under_13}
 \end{table}
 
+Tweet 2--5 in \Tableref{tab:tweets_under_13} all have either an android or blackberry theme in them
+which is expected. Tweet 1, 6, 7 and 8 all have either an ``issues'' or ``device'' theme in them.
+These should arguably be two different topics but our model has merged them.
 
 
 \subsubsection{Topic 14}
