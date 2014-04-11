@@ -27,46 +27,44 @@ model and have a look at some of the tweets that fall under those topics.
 
 \subsection{Evaluating 30 Topics}
 \label{sec:evaluating-30-topics}
-The topic-word distributions in \Tableref{tab:evaluating-30-topics} are a combination of unigrams
+The topic-word distributions in \Tableref{tab:30-topics} are a combination of unigrams
 and bigrams.
 
-\begin{table}
-  \begin{tabular}{c p{16cm}} \toprule
-    Topic & Topic-Words associations \\ \midrule
-    0     & app, latest, generation, version, galaxy, won, set, oh, save, minute \\ \midrule
-    1     & walk, watching, unveils, today stories, beat rivals, ipads beat, missed unveils, revamped, revamped ipads, rivals \\ \midrule
-    2     & perfect, case, 16gb, black, gt, giving, clean, smartphone, ya, pink \\ \midrule
-    3     & screen, place, http, better, place visit, visit gameinsight, entirely, electronic \\ \midrule
-    4     & video, love, app android, yay, tomorrow, let, liked, liked video, operating, single \\ \midrule
-    5     & complete, follow, managed, week, having, girls, task, complete task, managed complete \\ \midrule
-    6     & ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed \\ \midrule
-    7     & google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed rockstar, uses \\ \midrule
-    8     & using, world, best, hate, beat, skips, skips africa, africa, africa world, release 5s \\ \midrule
-    9     & music, 10, mavericks, number, yes, coming, soon, earn, cards, support \\ \midrule
-    10    & new, app, store, available, design, playing, stargazing, stargazing app, new design \\ \midrule
-    11    & really, os, gift, stores, hours, news, fail, stores piss, piss, broken \\ \midrule
-    12    & day, battery, good, shit, display, thanks, battery life, omg, seriously, ios7 \\ \midrule
-    13    & android, use, blackberry, update, web, 11, issues, devices, hd, fix issues \\ \midrule
-    14    & official, 5s, 5c, life, models, cracked, color, worries, nexus, highlighters \\ \midrule
-    15    & know, pc, 4s, old, does, releases, air saywhatnow, releases air, saywhatnow, did \\ \midrule
-    16    & time, ll, date, wonderful, charger, working, nice, message, cell, took \\ \midrule
-    17    & got, today, ve, going, smart, help, protector, hell, screen protector, got new \\ \midrule
-    18    & samsung, don, download, updated, people, radio, meet, ft, updated ios, malware jumps \\ \midrule
-    19    & nsa, microsoft, facebook google, google substantial, nsa surveillance, reform, reform nsa, substantial, substantial reform, surveillance \\ \midrule
-    20    & lol, education, chocolate, team, double, wait, boot, white girls, girls like, couple days \\ \midrule
-    21    & air, free, visit, power, satisfaction, 99 free, app 99, power tablet, tops, war \\ \midrule
-    22    & release, like, new, facebook, big, make, new 5s, gadgets, product, brand \\ \midrule
-    23    & just, white, app, gold, users, gold 5s, awesome, way, unfollowed, link \\ \midrule
-    24    & verizon, laptop, finally, say, dont, years, getting, ready, costumes, lost \\ \midrule
-    25    & apps, phone, check, ip, cause, thank, hope, dad, im, gt gt \\ \midrule
-    26    & gameinsight, halloween, try, retweet, giveaway, win, work, try gameinsight, days, tweet \\ \midrule
-    27    & bbm, bbm android, official release, android official, android bbm, perfect features, features bbm, want, buy, need \\ \midrule
-    28    & mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models \\ \midrule
-    29    & itunes, released, think, year, great, touches, album, downloadtoyboysingle, didn, eas \\ \bottomrule
-  \end{tabular}
-  \caption{30 word-topic distributions with unigrams and bigrams}
-  \label{tab:unigrams_bigrams_lda}
-\end{table}
+\begin{longtable}{c p{16cm}} \toprule
+  Topic & Topic-Words associations \\ \midrule
+   0    & app, latest, generation, version, galaxy, won, set, oh, save, minute \\ \midrule
+   1    & walk, watching, unveils, today stories, beat rivals, ipads beat, missed unveils, revamped, revamped ipads, rivals \\ \midrule
+   2    & perfect, case, 16gb, black, gt, giving, clean, smartphone, ya, pink \\ \midrule
+   3    & screen, place, http, better, place visit, visit gameinsight, entirely, electronic \\ \midrule
+   4    & video, love, app android, yay, tomorrow, let, liked, liked video, operating, single \\ \midrule
+   5    & complete, follow, managed, week, having, girls, task, complete task, managed complete \\ \midrule
+   6    & ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed \\ \midrule
+   7    & google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed rockstar, uses \\ \midrule
+   8    & using, world, best, hate, beat, skips, skips africa, africa, africa world, release 5s \\ \midrule
+   9    & music, 10, mavericks, number, yes, coming, soon, earn, cards, support \\ \midrule
+   10   & new, app, store, available, design, playing, stargazing, stargazing app, new design \\ \midrule
+   11   & really, os, gift, stores, hours, news, fail, stores piss, piss, broken \\ \midrule
+   12   & day, battery, good, shit, display, thanks, battery life, omg, seriously, ios7 \\ \midrule
+   13   & android, use, blackberry, update, web, 11, issues, devices, hd, fix issues \\ \midrule
+   14   & official, 5s, 5c, life, models, cracked, color, worries, nexus, highlighters \\ \midrule
+   15   & know, pc, 4s, old, does, releases, air saywhatnow, releases air, saywhatnow, did \\ \midrule
+   16   & time, ll, date, wonderful, charger, working, nice, message, cell, took \\ \midrule
+   17   & got, today, ve, going, smart, help, protector, hell, screen protector, got new \\ \midrule
+   18   & samsung, don, download, updated, people, radio, meet, ft, updated ios, malware jumps \\ \midrule
+   19   & nsa, microsoft, facebook google, google substantial, nsa surveillance, reform, reform nsa, substantial, substantial reform, surveillance \\ \midrule
+   20   & lol, education, chocolate, team, double, wait, boot, white girls, girls like, couple days \\ \midrule
+   21   & air, free, visit, power, satisfaction, 99 free, app 99, power tablet, tops, war \\ \midrule
+   22   & release, like, new, facebook, big, make, new 5s, gadgets, product, brand \\ \midrule
+   23   & just, white, app, gold, users, gold 5s, awesome, way, unfollowed, link \\ \midrule
+   24   & verizon, laptop, finally, say, dont, years, getting, ready, costumes, lost \\ \midrule
+   25   & apps, phone, check, ip, cause, thank, hope, dad, im, gt gt \\ \midrule
+   26   & gameinsight, halloween, try, retweet, giveaway, win, work, try gameinsight, days, tweet \\ \midrule
+   27   & bbm, bbm android, official release, android official, android bbm, perfect features, features bbm, want, buy, need \\ \midrule
+   28   & mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models \\ \midrule
+   29   & itunes, released, think, year, great, touches, album, downloadtoyboysingle, didn, eas \\ \bottomrule
+\caption{30 word-topic distributions with unigrams and bigrams}
+\label{tab:30-topics}
+\end{longtable}
 %analyse 6, 7, 9, 12, 13, 14, 22, 27, 28
 
 
