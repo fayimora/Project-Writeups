@@ -1,17 +1,19 @@
 \chapter{Topic Modelling}
 \label{cha:topic_modelling}
-In this chapter, we will try to find themes/topics that exist in our dataset. Our input dataset will
-be a set of relevant tweets as determined by the classifier in the previous chapter. We will use
-Latent Dirichlet Allocation as discussed in \Sectionref{sec:bg_lda} on page \pageref{sec:bg_lda}.
+In this chapter, we use a topic model to find themes/topics that exist in our dataset. Our input
+dataset is a set of relevant tweets as determined by the classifier in the previous chapter. We use
+Latent Dirichlet Allocation as our topic model as described in \Sectionref{sec:bg_lda} on page
+\pageref{sec:bg_lda}.
 
-Tables~\ref{tab:30-topics} and~\ref{tab:40-topics} on pages
-\pageref{tab:30-topics} and \pageref{tab:40-topics} each show a list of 20 topics and
-their respective topic-words distribution. Each row comprises of a list of tokens(n-grams) that try
-to explain a topic and they are ordered by their level of influence. While it is helpful to have our
-tokens ordered by level of influence, the actual influence weights are excluded from the table
-because we will not be paying too much attention to them during our analysis. We take a topic's
-token associations and analyse them as if they had equal weights and use the weights to handle any
-topic dilemmas.
+Tables~\ref{tab:30-topics} and~\ref{tab:40-topics} on pages \pageref{tab:30-topics} and
+\pageref{tab:40-topics} each show a list of 30 and 40 topics. It also contains their respective
+topic-tokens distribution. For the purpose of this study, a token is either a unigram or bigram.
+Each row comprises of a list of tokens that try to explain a topic and they are ordered by their
+level of influence. While it is helpful to have our tokens ordered by level of influence, the
+respective influence values are excluded from the table because we will not pay much
+attention to them during our analysis.
+
+% TODO: Briefly explain methodology of analysis
 
 \section{Preprocessing}
 \label{sec:lda_preprocessing}
@@ -19,11 +21,11 @@ topic dilemmas.
 
 \section{Evaluating Topic Models}
 \label{sec:evaluating_topic_models}
-We will be analysing two separate models one of which will be using a mixture of unigrams and
-bigrams as tokens while the other will make use of bigrams as tokens. This was inspired by our
-experiments in \Sectionref{sec:training_classifier}. Our classifier showed better performance using
-a mixture of unigrams and bigrams as well as bigrams alone. We will analyse a few topics for each
-model and have a look at some of the tweets that fall under those topics.
+We analyse two separate models one of which will comprise of 30 topics while the other of 40 topics.
+They both use a mixture of unigrams and bigrams in their token distribution. This was inspired by
+our experiments in \Sectionref{sec:training_classifier} where the classifier showed better
+performance when using a mixture of unigrams and bigrams. We analyse a few topics for each model and
+have a look at some of the tweets that fall under those topics.
 
 \subsection{Evaluating 30 Topics}
 \label{sec:evaluating-30-topics}
@@ -31,7 +33,7 @@ The topic-word distributions in \Tableref{tab:30-topics} are a combination of un
 and bigrams.\\
 
 \begin{longtable}{c p{16cm}} \toprule
-  Topic & Topic-Words associations \\ \midrule
+  Topic & Topic-Tokens Distribution \\ \midrule
    0    & app, latest, generation, version, galaxy, won, set, oh, save, minute \\ \midrule
    1    & walk, watching, unveils, today stories, beat rivals, ipads beat, missed unveils, revamped, revamped ipads, rivals \\ \midrule
    2    & perfect, case, 16gb, black, gt, giving, clean, smartphone, ya, pink \\ \midrule
@@ -62,7 +64,7 @@ and bigrams.\\
    27   & bbm, bbm android, official release, android official, android bbm, perfect features, features bbm, want, buy, need \\ \midrule
    28   & mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models \\ \midrule
    29   & itunes, released, think, year, great, touches, album, downloadtoyboysingle, didn, eas \\ \bottomrule
-\caption{30 word-topic distributions with unigrams and bigrams}
+\caption{30 topic-tokens distribution with unigrams and bigrams}
 \label{tab:30-topics}
 \end{longtable}
 %analyse 6, 7, 9, 12, 13, 14, 22, 27, 28
