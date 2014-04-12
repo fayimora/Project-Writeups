@@ -225,7 +225,11 @@ articular tweets was retweeted a lot of times.
 \label{sec:topic_13}
 \textit{android, use, blackberry, update, web, 11, issues, devices, hd, fix issues}\\\\
 At first glance, the main themes that stand out in the above distribution are ``android'',
-``blackberry'' and ``issues''.
+``blackberry'' and ``issues''. Our dataset is Apple-centric so we could assume that the tweets with
+a large proportion of this topic will have some sort of comparison between Apple, Android and
+Blackberry with respect to issues that occur with their products. If this is not the case, it is
+possible that our topic model has merged two different topics into one topic. To verify our
+assumption, we analyse a few tweets that have a reasonable proportion of this topic.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
@@ -243,9 +247,13 @@ At first glance, the main themes that stand out in the above distribution are ``
   \label{tab:topic_13_tweets}
 \end{table}
 
-Tweet 2--5 in \Tableref{tab:topic_13_tweets} all have either an android or blackberry theme in them
-which is expected. Tweet 1, 6, 7 and 8 all have either an ``issues'' or ``device'' theme in them.
-These should arguably be two different topics but our model has merged them.
+Tweets 2--5 in \Tableref{tab:topic_13_tweets} all have either an android or blackberry theme in them
+which is expected. They all talk about applications on all three platforms. On the other hand,
+tweets 1, 6, 7 and 8 all have an ``issues'' theme in them. Unfortunately, these two topics do not
+really complement each other and should arguably be split into two separate topics. Some of the
+latter mentioned tweets do also talk about applications on Apple's platforms which maybe the reason
+why our topic model observed a relationship between these topics.
+
 
 
 \subsubsection{Topic 14}
