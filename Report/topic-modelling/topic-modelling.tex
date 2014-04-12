@@ -106,6 +106,13 @@ having 89\% proportion of topic 6.
 \label{sec:topic_7}
 \textit{google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed
 rockstar, uses } \\\\
+From a simple scan through the tokens in this topic, we can postulate that the tweets in this topic
+will mostly be about Google, Samsung, Nortel and the Rockstar Consortium. Nortel was a
+communications and networking equipment manufacturer which went bankrupt and the Rockstar Consortium
+was formed to negotiate licensing for patents they owned. However, we do not expect our whole
+dataset to be about patent war between these companies. Samsung and Google are large technology
+companies and we might encounter tweets that simple compare their products with that of Apple. We
+can make this assumption because we know our dataset is Apple-centric.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
@@ -125,11 +132,21 @@ rockstar, uses } \\\\
   \label{tab:topic_7_tweets}
 \end{table}
 
+\Tableref{tab:topic_7_tweets} is a list of 10 randomly selected tweets with with a fair proportion
+of our topic. The first four tweets are about patents and lawsuits and our dataset contains a number
+of variations of those tweets, each of which have been retweeted many times. The fifth, sixth and
+seventh tweets all talk about products by Google while the last three tweets compare Apple's
+products to that of other companies.
 
 
 \subsubsection{Topic 9}
 \label{sec:topic_9}
 \textit{music, 10, mavericks, number, yes, coming, soon, earn, cards, support}\\\\
+This topic, compared to previous topics, is a little tougher to analyse. ``music'' is th most
+salient token in the distribution but we also have unrelated tokens like ``mavericks'', ``cards'',
+``earn'' and ``support''. While they might actually be closely related, it is not very obvious that
+they are by merely looking at the topic-token distribution. To get a better understanding of this
+topic, we take a look at some tweets with a fair proportion of the topic.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
@@ -149,7 +166,13 @@ rockstar, uses } \\\\
   \label{tab:topic_9_tweets}
 \end{table}
 
-
+Apple released a new operating system called Mavericks around the time our dataset was gathered
+which is what the first and fifth tweets are about and it also explain why the token ``mavericks''.
+The second tweet talks about the arrival of an iPhone 6 but our dataset only contains less than 10
+tweets with the word ``coming''. Tweets 4, 6 and 7 all talk about music and our dataset contains a
+large amount of those type of tweets while tweets 8 and 9 talk about mobile numbers. Without having
+to dig deeper, it is obvious that our topic is not well formed as it is a combination of multiple
+topics that do not complement each other.
 
 \subsubsection{Topic 12}
 \label{sec:topic_12}
