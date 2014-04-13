@@ -408,7 +408,21 @@ proportions(50\% and 20\% respectively) which is acceptable.
 
 \subsection{Evaluating 40 Topics}
 \label{sec:evaluating-40-topics}
-% TODO: Complete this section
+In \Sectionref{sec:evaluating-30-topics}, we analysed a topic model that generated 30 topics on our
+datset. In this section, we will analyse a model that generates 40 topics on our dataset. We use the
+same dataset for both models so we expect a few overlapping topics. We briefly look at these topics
+and then we look at a few new topics.
+
+\Tableref{tab:40-topics} on \Pageref{tab:40-topics} shows a list of 40 topics and their respective
+token distribution. This table can be used to analyse all topics abstractly but to have a genral
+overview of all tokens in our table, we use a word cloud as shown in \Figref{fig:40-topics-cloud} on
+\Pageref{fig:40-topics-cloud}. In our cloud, we see prominent words like ``app'', ``bbm'',
+``google'', ``device'' amongst others which also appears in our 30-topic word cloud.
+
+Most of the tokens used in the 40-topics model also appear in the 30-topics model and as a result, it is
+difficult to draw a sane comparison between these models from either the word clouds or tables. For
+this reason, we take a more detailed look at each topic and it's token distribution. We attempt to
+find similar topics in the 30-topics model and analyse some new topics.
 
 \begin{figure}
 \begin{center}
@@ -464,6 +478,9 @@ proportions(50\% and 20\% respectively) which is acceptable.
 \label{tab:40-topics}
 \end{longtable}
 
+
+\subsubsection{Analysing topic similarities}
+\label{sec:analysing-topic-similarities}
 
 \newpage
 \section{Summary}
