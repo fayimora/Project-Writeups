@@ -38,8 +38,24 @@ each model and have a look at some of the tweets that fall under those topics.
 \label{fig:30-topics-cloud}
 \end{figure}
 
-The topic-token distribution in \Tableref{tab:30-topics} are a combination of unigrams
-and bigrams.\\
+\Tableref{tab:30-topics} shows a list of 30 topics and their respective token distribution. This
+table can be used to get an abstract view of the topics but to get an even better view of
+distribution across all topics, we refer to \Figref{fig:30-topics-cloud} on
+\Pageref{fig:30-topics-cloud} which is a word cloud of all tokens on our table. The frequency of a
+word determines its size in the cloud.
+
+We can see words like ``android'' and ``ios'' which are mobile operating systems built by Google and
+Apple, respectively. We can also see words like ``app'', ``issues'', ``5s'',``mini'', ``google'' and
+``samsung'' which can be in some way related to Apple. For instance, ``app'' might refer to
+applications on any of Apple's platform while ``5s'' could refer to the new mobile phone released by
+Apple around the time our data was gathered. Google and Samsung are competitors with Apple, so these
+words could have been gotten from tweets that compare either their products or companies as a
+whole.
+
+To get a more detailed insight into what these words represent and what the topics represent, we
+analyse a few topics in detail by making a few assumptions about the topics and using the tweets to
+verify our assumptions.
+
 
 \begin{longtable}{c p{16cm}} \toprule
   Topic & Topic-Tokens Distribution \\ \midrule
@@ -260,6 +276,13 @@ why our topic model observed a relationship between these topics.
 \subsubsection{Topic 14}
 \label{sec:topic-14}
 \textit{official, 5s, 5c, life, models, cracked, color, worries, nexus, highlighters}\\\\
+An initial scan of our token distribution above does not tell us that this topic might be mostly
+about the 5s and 5c. In September 2013, a month before our data set was gathered, Apple released two
+models of its mobile phone and they were called iPhone 5S and iPhone 5C. With this knowledge, we
+could hypothesise that tweets with a large proportion of this topic will mostly be about these new
+phones. We can also rely on the fact that our distribution contains tokens like ``5s'' and ``5c''.
+Tokens like ``models'', ``cracked'' and ``worries'' could also be used to describe a state of the
+phones.
 
 \begin{table}[H]
   \begin{tabular}{c c p{13cm}} \toprule
@@ -277,6 +300,11 @@ why our topic model observed a relationship between these topics.
   \label{tab:topic-14-tweets}
 \end{table}
 
+The first tweet in \Tableref{tab:topic-14-tweets} does not really refer to the iphone 5S or 5C but
+is genrally about the iPhone which is acceptable. Tweets 2--8 however are all about either the 5S or
+5C. They each also use terms like ``color'' and ``models'' to describe the phone in some way.
+Unfortunately, our topic model has tagged the last tweet with only 22\% of our topic which is
+unexpected because the tweet does actually talk about both the 5S and 5C models.
 
 
 \subsubsection{Topic 22}
