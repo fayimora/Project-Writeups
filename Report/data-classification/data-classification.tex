@@ -1,6 +1,6 @@
 
 \chapter{Data Classification}
-\label{cha:data_classification}
+\label{cha:data-classification}
 First step towards this project is to fetch our data from Twitter. The data is classified into two
 groups, relevant and irrelevant. We will be spending most of our time with the relevant data.
 
@@ -46,13 +46,13 @@ screen shot of what the application looks like.
     \includegraphics[scale=0.4]{figures/labeller_instructions}
   \end{center}
   \caption{Instructions on how to label the tweets}
-\label{fig:labeller_instructions}
+\label{fig:labeller-instructions}
 \end{figure}
 
 While using the web application in \Figref{fig:labeller} makes labelling tweets easier and a
 little quicker, it does not change the fact the we still have to manually label a plethora of
 tweets. To speed up this process even further, the data labeller was made public and the labelling
-was crowd sourced. A list of instructions (\Figref{fig:labeller_instructions}) were also given
+was crowd sourced. A list of instructions (\Figref{fig:labeller-instructions}) were also given
 to anyone who helped label the tweets.
 
 One problem with crowd sourcing this task is that people have different opinions about what is
@@ -66,8 +66,8 @@ best training set, it gives us a certain level of confidence about our training 
 arguably much better than single handedly creating the training set.
 
 \section{Training a classifier}
-\label{sec:training_classifier}
-As discussed in Section~\ref{sec:bg_naive_bayes}, a Na\"{i}ve Bayes Classifier is a probabilistic
+\label{sec:training-classifier}
+As discussed in Section~\ref{sec:bg-naive-bayes}, a Na\"{i}ve Bayes Classifier is a probabilistic
 classifier which is based on the Bayes Theorem. We will train one and use it to classify the tweets
 into relevant and irrelevant groups.
 
@@ -104,8 +104,8 @@ those documents not relevant to a query as in those documents relevant to the qu
 words, stop words occur in every document irrespective of the document's relevance. Stop words are
 usually the most common word in a language, English in this case. Some examples include
 \textit{and}, \textit{or}, \textit{the} etc. Removal of stop words from text usually results in
-better model performance as shown in \Figref{fig:auc_curves_stopwords} on page
-\pageref{fig:auc_curves_stopwords}.
+better model performance as shown in \Figref{fig:auc-curves-stopwords} on page
+\pageref{fig:auc-curves-stopwords}.
 
 %TODO: reference a table in a future section that proves this.
 
@@ -149,11 +149,11 @@ the following documents:
       \hline
     \end{tabular}
     \caption{A bag-of-words representation}
-    \label{tab:document-term_matrix}
+    \label{tab:document-term-matrix}
   \end{center}
 \end{table}
 
-By the above definition, \Tableref{tab:document-term_matrix} will be an accurate representation
+By the above definition, \Tableref{tab:document-term-matrix} will be an accurate representation
 of our sentences using the bag of words model. Note that in our example, each sentence is a document
 and all sentences form the corpora.
 
@@ -166,17 +166,17 @@ resulting matrix to train our classifier.
   \begin{subfigure}[b]{0.49\linewidth}
     \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_01}
   \caption{AUC=74 with stopwords}
-  \label{fig:auc_with_stopwords}
+  \label{fig:auc-with-stopwords}
   \end{subfigure}
   % =============
   \begin{subfigure}[b]{0.49\linewidth}
       \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_02}
   \caption{AUC=76 without stopwords}
-  \label{fig:auc_without_stopwords}
+  \label{fig:auc-without-stopwords}
   \end{subfigure}
 
 \caption{AUC curves with and without stopwords}
-\label{fig:auc_curves_stopwords}
+\label{fig:auc-curves-stopwords}
 \end{figure}
 
 \begin{table}
@@ -196,7 +196,7 @@ resulting matrix to train our classifier.
       0.9873          & 0.0005        & 0.7454          & 0.0200 \\ \bottomrule
     \end{tabular}
       \caption{With stopwords}
-      \label{tab:data_with_stopwords}
+      \label{tab:data-with-stopwords}
   \end{subtable}
   % =======================
   \begin{subtable}{.5\linewidth}
@@ -215,10 +215,10 @@ resulting matrix to train our classifier.
       0.9900          & 0.0004        & 0.7572          & 0.0160 \\ \bottomrule
     \end{tabular}
       \caption{Without stopwords}
-      \label{tab:data_without_stopwords}
+      \label{tab:data-without-stopwords}
   \end{subtable}
 \caption{Accuracy and AUC for 10-fold cross validation}
-\label{tab:all_data_tables}
+\label{tab:all-data-tables}
 \end{table}
 
 
@@ -229,17 +229,17 @@ resulting matrix to train our classifier.
   \begin{subfigure}[b]{0.49\linewidth}
     \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_03}
   \caption{AUC curve for tf-idf weighted corpora}
-  \label{fig:auc_tfidf}
+  \label{fig:auc-tfidf}
   \end{subfigure}
   % =============
   \begin{subfigure}[b]{0.49\linewidth}
     \includegraphics[width=\linewidth]{figures/pr_NB_Tweets_Classifier_04}
   \caption{AUC curve for best found model}
-  \label{fig:auc_best_model}
+  \label{fig:auc-best-model}
   \end{subfigure}
 
   \caption{AUC curves for tf-idf weighted and best found models, resectively}
-  \label{fig:auc_curves_tfidf_grid}
+  \label{fig:auc-curves-tfidf-grid}
 \end{figure}
 
 
@@ -260,7 +260,7 @@ resulting matrix to train our classifier.
       0.9939          & 0.0004        & 0.7876          & 0.0171 \\ \bottomrule
     \end{tabular}
       \caption{with tfidf weighted model}
-      \label{tab:tfidf_model}
+      \label{tab:tfidf-model}
   \end{subtable}
   % =======================
   \begin{subtable}{.5\linewidth}
@@ -279,8 +279,9 @@ resulting matrix to train our classifier.
       0.9954          & 0.0004        & 0.8487          & 0.0191 \\ \bottomrule
     \end{tabular}
       \caption{best model}
-      \label{tab:best_model}
+      \label{tab:best-model}
   \end{subtable}
 \caption{Accuracy and AUC for Tf-idf weighted model and best searched model}
-\label{tab:all_data_tables}
+\label{tab:all-data-tables}
 \end{table}
+

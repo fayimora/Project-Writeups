@@ -1,9 +1,9 @@
 \chapter{Topic Modelling}
-\label{cha:topic_modelling}
+\label{cha:topic-modelling}
 In this chapter, we use a topic model to find themes/topics that exist in our dataset. Our input
 dataset is a set of relevant tweets as determined by the classifier in the previous chapter. We use
-Latent Dirichlet Allocation as our topic model as described in \Sectionref{sec:bg_lda} on page
-\pageref{sec:bg_lda}.
+Latent Dirichlet Allocation as our topic model as described in \Sectionref{sec:bg-lda} on page
+\pageref{sec:bg-lda}.
 
 Tables~\ref{tab:30-topics} and~\ref{tab:40-topics} on pages \pageref{tab:30-topics} and
 \pageref{tab:40-topics} each show a list of 30 and 40 topics. It also contains their respective
@@ -16,14 +16,14 @@ attention to them during our analysis.
 % TODO: Briefly explain methodology of analysis
 
 \section{Preprocessing}
-\label{sec:lda_preprocessing}
+\label{sec:lda-preprocessing}
 % TODO: Complete this section
 
 \section{Evaluating Topic Models}
-\label{sec:evaluating_topic_models}
+\label{sec:evaluating-topic-models}
 In this section, we analyse two separate models one of which will comprise of 30 topics while the
 other of 40 topics. They both use a mixture of unigrams and bigrams in their token distribution.
-This was inspired by our experiments in \Sectionref{sec:training_classifier} where the classifier
+This was inspired by our experiments in \Sectionref{sec:training-classifier} where the classifier
 showed better performance when using a mixture of unigrams and bigrams. We analyse a few topics for
 each model and have a look at some of the tweets that fall under those topics.
 % TODO: Something about our empirical approach to the evaluation here
@@ -81,7 +81,7 @@ and bigrams.\\
 
 
 \subsubsection{Topic 6}
-\label{sec:topic_6}
+\label{sec:topic-6}
 \textit{ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed} \\\\
 The most common theme in the above distribution is ``ios'' and ``lets''. ``bbm'' also seems to have
 a considerate amount of relevancy as it is the third most relevant token. The other tokens seem
@@ -100,10 +100,10 @@ fair proportion of this topic.
     results from the app \#game \#ios \#app \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 6}
-  \label{tab:topic_6_tweets}
+  \label{tab:topic-6-tweets}
 \end{table}
 
-The tweets in \Tableref{tab:topic_6_tweets} all seem to have at least 63\% of topic 6. While they
+The tweets in \Tableref{tab:topic-6-tweets} all seem to have at least 63\% of topic 6. While they
 might look like carefully selected tweets, they were actually chosen at random. Our dataset contains
 a large fraction of the third, fourth and fifth tweet. Approximately 90\% of them are retweets which
 explains why our topic model extracted ``ios lets'', ``lets apps'', ``game'' and ``tech'' as
@@ -114,7 +114,7 @@ having 89\% proportion of topic 6.
 
 
 \subsubsection{Topic 7}
-\label{sec:topic_7}
+\label{sec:topic-7}
 \textit{google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed
 rockstar, uses } \\\\
 From a simple scan through the tokens in this topic, we can postulate that the tweets in this topic
@@ -140,10 +140,10 @@ can make this assumption because we know our dataset is Apple-centric.
     10  & 90\%       & Apple earned more than Samsung, LG, Nokia, Huawei, Lenovo \& Motorola's mobile shipments combined \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 7}
-  \label{tab:topic_7_tweets}
+  \label{tab:topic-7-tweets}
 \end{table}
 
-\Tableref{tab:topic_7_tweets} is a list of 10 randomly selected tweets with with a fair proportion
+\Tableref{tab:topic-7-tweets} is a list of 10 randomly selected tweets with with a fair proportion
 of our topic. The first four tweets are about patents and lawsuits and our dataset contains a number
 of variations of those tweets, each of which have been retweeted many times. The fifth, sixth and
 seventh tweets all talk about products by Google while the last three tweets compare Apple's
@@ -151,7 +151,7 @@ products to that of other companies.
 
 
 \subsubsection{Topic 9}
-\label{sec:topic_9}
+\label{sec:topic-9}
 \textit{music, 10, mavericks, number, yes, coming, soon, earn, cards, support}\\\\
 This topic, compared to previous topics, is a little tougher to analyse. ``music'' is th most
 salient token in the distribution but we also have unrelated tokens like ``mavericks'', ``cards'',
@@ -174,11 +174,11 @@ topic, we take a look at some tweets with a fair proportion of the topic.
     10 & 78\%       & Earn gift cards, flier miles and more with Perk - download for iphone now! \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 9}
-  \label{tab:topic_9_tweets}
+  \label{tab:topic-9-tweets}
 \end{table}
 
 Apple released a new operating system called Mavericks around the time our dataset was gathered
-which is what the first and fifth tweets are about in \Tableref{tab:topic_9_tweets} and it also
+which is what the first and fifth tweets are about in \Tableref{tab:topic-9-tweets} and it also
 explains what the token ``mavericks'' means. The second tweet talks about the arrival of an iPhone 6
 but our dataset only contains less than 10 tweets with the word ``coming''. Tweets 4, 6 and 7 all
 talk about music and our dataset contains a large amount of those type of tweets while tweets 8 and
@@ -186,7 +186,7 @@ talk about music and our dataset contains a large amount of those type of tweets
 formed as it is a combination of multiple topics that do not complement each other.
 
 \subsubsection{Topic 12}
-\label{sec:topic_12}
+\label{sec:topic-12}
 \textit{day, battery, good, shit, display, thanks, battery life, omg, seriously, ios7}\\\\
 The most salient token we have is ``day'' which does not mean much to us. Our token-distribution
 also seems to have a number of adverbs, adjectives and slang like ``good'', ``seriously'' and
@@ -208,10 +208,10 @@ of the tweets with a fair proportion of the topic.
     8  & 50\%       & can I have an iphone with bbm and the battery life of a nokia please \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 12}
-  \label{tab:topic_12_tweets}
+  \label{tab:topic-12-tweets}
 \end{table}
 
-All tweets(except the 7th) in \Tableref{tab:topic_12_tweets} all refer to the iPhone battery life. A
+All tweets(except the 7th) in \Tableref{tab:topic-12-tweets} all refer to the iPhone battery life. A
 very large number of tweets that have a good proportion of this topic take in some way, the shape of
 tweets 1--4 in our table and fortunately, our topic model is able to find the relationship between
 these tweets.
@@ -223,7 +223,7 @@ articular tweets was retweeted a lot of times.
 
 
 \subsubsection{Topic 13}
-\label{sec:topic_13}
+\label{sec:topic-13}
 \textit{android, use, blackberry, update, web, 11, issues, devices, hd, fix issues}\\\\
 At first glance, the main themes that stand out in the above distribution are ``android'',
 ``blackberry'' and ``issues''. Our dataset is Apple-centric so we could assume that the tweets with
@@ -245,10 +245,10 @@ assumption, we analyse a few tweets that have a reasonable proportion of this to
     8  & 78\%       & Manufacturing issue causing battery problems in some iPhone 5s devices \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 13}
-  \label{tab:topic_13_tweets}
+  \label{tab:topic-13-tweets}
 \end{table}
 
-Tweets 2--5 in \Tableref{tab:topic_13_tweets} all have either an android or blackberry theme in them
+Tweets 2--5 in \Tableref{tab:topic-13-tweets} all have either an android or blackberry theme in them
 which is expected. They all talk about applications on all three platforms. On the other hand,
 tweets 1, 6, 7 and 8 all have an ``issues'' theme in them. Unfortunately, these two topics do not
 really complement each other and should arguably be splitted into two separate topics. Some of the
@@ -258,7 +258,7 @@ why our topic model observed a relationship between these topics.
 
 
 \subsubsection{Topic 14}
-\label{sec:topic_14}
+\label{sec:topic-14}
 \textit{official, 5s, 5c, life, models, cracked, color, worries, nexus, highlighters}\\\\
 
 \begin{table}[H]
@@ -274,13 +274,13 @@ why our topic model observed a relationship between these topics.
     8  & 22\%       & What Are The Most Popular iPhone 5s and 5c Colors? Space Gray And Blue. \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 14}
-  \label{tab:topic_14_tweets}
+  \label{tab:topic-14-tweets}
 \end{table}
 
 
 
 \subsubsection{Topic 22}
-\label{sec:topic_22}
+\label{sec:topic-22}
 \textit{release, like, new, facebook, big, make, new 5s, gadgets, product, brand}\\\\
 
 \begin{table}[H]
@@ -296,13 +296,13 @@ why our topic model observed a relationship between these topics.
     8  & 70\%       & iBoobies case for Apple iPhone 4 - make your phone even sexier \\  \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 22}
-  \label{tab:topic_22_tweets}
+  \label{tab:topic-22-tweets}
 \end{table}
 
 
 
 \subsubsection{Topic 27}
-\label{sec:topic_27}
+\label{sec:topic-27}
 \textit{bbm, bbm android, official release, android official, android bbm, perfect features,
 features bbm, want, buy, need} \\\\
 At first glance, we could say this topic has a lot to do with \textit{android}, \textit{bbm}, and
@@ -324,10 +324,10 @@ have a fair proportion of this topic.
     8  & 76\%       & I need a iphone 5 asap \\ \bottomrule
   \end{tabular}
   \caption{Tweets classified under topic 27}
-  \label{tab:topic_27_tweets}
+  \label{tab:topic-27-tweets}
 \end{table}
 
-\Tableref{tab:topic_27_tweets} is a list of tweets that fall under topic 27. We can see that the
+\Tableref{tab:topic-27-tweets} is a list of tweets that fall under topic 27. We can see that the
 first four tweets have a lot to do with the new BBM for iOS and Android. The fifth tweet is a little
 tricky as it says nothing about BBM\@. However, it does in fact talk about a chat application which is
 what BBM is. While the user might not have been referring to BBM in particular, our model was able
@@ -339,7 +339,7 @@ topic 27. This means that topic 27 is actually a combination of two different to
 
 
 \subsubsection{Topic 28}
-\label{sec:topic_28}
+\label{sec:topic-28}
 \textit{mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models}\\\\
 There are a lot of promotions/giveaways on Twitter that involve apple products. Tokens like
 ``win'', ``chance'' and ``chance win''  in our distribution tell us that this topic is about these
@@ -364,10 +364,10 @@ analyse some tweets with a fair proportion of this topic.
     10 & 20\%       & iMore -- iMore show 373: iPad Air and Retina iPad mini buyers guide \\ \midrule
   \end{tabular}
   \caption{Tweets classified under topic 28}
-  \label{tab:topic_28_tweets}
+  \label{tab:topic-28-tweets}
 \end{table}
 
-From \Tableref{tab:topic_28_tweets}, we can tell that Tweets 1--5 are all promotional tweets
+From \Tableref{tab:topic-28-tweets}, we can tell that Tweets 1--5 are all promotional tweets
 offering users a chance to win Apple products like the iPad mini. 60\% of the tweets with a fair
 proportion of this topic are all variations of those tweets. Tweets 6--8 all refer to iPad and
 iPhone cases and contrary to what we previously assumed, these cases are not part of the promotion.
