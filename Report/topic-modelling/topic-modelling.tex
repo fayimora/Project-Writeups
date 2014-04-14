@@ -428,7 +428,8 @@ and then we look at a few new topics.
 token distribution. This table can be used to analyse all topics abstractly but to have a genral
 overview of all tokens in our table, we use a word cloud as shown in \Figref{fig:40-topics-cloud} on
 \Pageref{fig:40-topics-cloud}. In our cloud, we see prominent words like ``app'', ``bbm'',
-``google'', ``device'' amongst others which also appears in our 30-topic word cloud.
+``google'', ``device'' amongst others which also appears in our 30-topic word cloud on
+\Pageref{fig:30-topics-cloud}.
 
 Most of the tokens used in the 40-topics model also appear in the 30-topics model and as a result, it is
 difficult to draw a sane comparison between these models from either the word clouds or tables. For
@@ -490,8 +491,34 @@ find similar topics in the 30-topics model and analyse some new topics.\\
 \end{longtable}
 
 
-\subsubsection{Analysing topic similarities}
+\subsubsection{Analysing similar topics}
 \label{sec:analysing-topic-similarities}
+As previously mentioned, we expect our 40 topics model to have some similar topics with the 30
+topics model. Forunately, there are a few simlar topics and \Tableref{tab:similar-topics} is a list
+of such topics. Each row contains a topic id from our 30-topics model and its corresponding similar
+topic from our 40-topics model. The ids correspond to the ``Topic'' attribute on
+Tables~\ref{tab:30-topics} and~\ref{tab:40-topics}. Both tables can also be found on
+Pages~\ref{tab:30-topics} and~\ref{tab:40-topics} respectively.
+
+In other to confirm that these topics are actually similar, we analyse at the token distribution
+for some of the topics and also compare tweets with a fair proportion of the respective topics.
+Specifically, we analyse rows 2, 6 and 7 from \Tableref{tab:similar-topics}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c c c} \toprule
+    No & 30 topics id & 40 topics id \\ \midrule
+    1  &     6       &    14 \\ \midrule
+    2  &     7       &    17 \\ \midrule
+    3  &     9       &    22 \\ \midrule
+    4  &     12      &    28 \\ \midrule
+    5  &     19      &    38 \\ \midrule
+    6  &     27      &    13 \\ \midrule
+    7  &     28      &    18 \\ \bottomrule
+  \end{tabular}
+  \caption{List of similar topics from our 30-topics and 40-topics model}
+  \label{tab:similar-topics}
+\end{table}
 
 \newpage
 \section{Summary}
