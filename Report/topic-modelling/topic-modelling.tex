@@ -494,7 +494,7 @@ find similar topics in the 30 topics model and analyse some new topics.\\
 \subsubsection{Analysing similar topics}
 \label{sec:analysing-topic-similarities}
 As previously mentioned, we expect our 40 topics model to have some similar topics with the 30
-topics model. Forunately, there are a few simlar topics and \Tableref{tab:similar-topics} is a list
+topics model. Fortunately, there are a few similar topics and \Tableref{tab:similar-topics} is a list
 of such topics. Each row contains a topic id from our 30 topics model and its corresponding similar
 topic from our 40 topics model. The ids correspond to the ``Topic'' attribute on
 Tables~\ref{tab:30-topics} and~\ref{tab:40-topics}. Both tables can also be found on
@@ -502,7 +502,7 @@ Pages~\ref{tab:30-topics} and~\ref{tab:40-topics} respectively.
 
 In other to confirm that these topics are actually similar, we analyse the token distribution
 for some of the topics and also compare tweets with a fair proportion of the respective topics.
-Specifically, we analyse rows 2, 6 and 7 from \Tableref{tab:similar-topics}
+Specifically, we analyse rows 2 and 6 from \Tableref{tab:similar-topics}
 
 \begin{table}
   \centering
@@ -519,5 +519,72 @@ Specifically, we analyse rows 2, 6 and 7 from \Tableref{tab:similar-topics}
   \caption{List of similar topics from our 30 topics and 40 topics model}
   \label{tab:similar-topics}
 \end{table}
+
+
+
+\subsubsection*{Row 2}
+1 $\rightarrow$ \textit{google, backed, google samsung, mobile, nortel, patents, microsoft backed, rockstar, backed rockstar, uses }  \\
+2 $\rightarrow$ \textit{samsung, google samsung, backed, entirely, nortel, patents, share, beat, uses, really entirely}   \\
+
+We can infer that both distributions above are trying to explain the same topic because they both
+use tokens like ``google'', ``samsung'', ``patents'', and ``nortel'' to explain their topics. With
+this knowledge, we can also expect our 40 topics model should have tagged the same tweets with
+this topic.
+
+\begin{table}[H]
+  \begin{tabular}{c c p{13cm}} \toprule
+    No  & Proportion & Tweet \\ \midrule
+    1   & 76\%       & Apple Continues To Lose Tablet Market Share But Should Rebound With The Air \\ \midrule
+    2   & 72\%       & iPad market share dips to less than 30\% while tablet market grew 7\% overall \\ \midrule
+    3   & 57\%       & would you suggest the IPad or galaxy note 10? What do you like best? \\ \midrule
+    4   & 77\%       & Apple, Microsoft-backed Rockstar uses Nortel patents to sue Google, Samsung and others \\ \midrule
+    5   & 77\%       & Google, Samsung, and others sued over search patents by Apple-backed Nortel group \\ \midrule
+    6   & 80\%       & Apple, Microsoft-Backed Rockstar Consortium Sues Google, Samsung Over 7 \\ \bottomrule
+  \end{tabular}
+  \caption{Tweets classified under topic 17(40 topics model)}
+  \label{tab:topic-17-tweets-topic-40}
+\end{table}
+
+Comparing \Tableref{tab:topic-17-tweets-topic-40} above and \Tableref{tab:topic-7-tweets} on
+page~\pageref{tab:topic-7-tweets}, we can see that both models have very similar tweets. The former
+seems to have a combination of two topics and so does the latter. \Sectionref{sec:topic-7} gives a
+more detailed explanation of what the common tweets represent.
+
+
+
+\subsubsection*{Row 6}
+1 $\rightarrow$ \textit{bbm, bbm android, official release, android official, android bbm, perfect features, features bbm, want, buy, need}  \\
+2 $\rightarrow$ \textit{bbm, bbm android, official release, android official, got, want, gold, macbook, gold 5s, smart}   \\
+
+After an initial scan, we could infer that the above distributions are both trying to explain the
+same topic. They both have their first four salient topics in common, in the same order. This
+increases the chances of our assumption being valid. To confirm the validity of our assumption, we
+analyse the tweets categorised under this topic by our 40 topics model.
+
+\begin{table}[H]
+  \begin{tabular}{c c p{13cm}} \toprule
+    No  & Proportion & Tweet \\ \midrule
+    1   & 21\%       & More perfect features, BBM android, BBM iPhone \\ \midrule
+    2   & 50\%       & BBM on android and iPhone, official release - get it here \\ \midrule
+    3   & 65\%       & I just connected with friends on \#BBM\@. Invite your BlackBerry, Android and iPhone friends \\ \midrule
+    4   & 47\%       & BBM\@. Now on Android and iPhone. \\ \midrule
+    5   & 82\%       & Just got bbm chat for the iPhone, feel free to add me if you want \\ \midrule
+    6   & 70\%       & i want an iPhone 5 \\ \midrule
+    7   & 32\%       & white girls be like: i want a iPhone 5c with THAT case!! \\ \midrule
+    8   & 60\%       & I want the gold iPhone 5s so bad \\ \bottomrule
+  \end{tabular}
+  \caption{Tweets classified under topic 13(40 topics model)}
+  \label{tab:topic-13-tweets-topic-40}
+\end{table}
+
+Comparing \Tableref{tab:topic-13-tweets-topic-40} above and \Tableref{tab:topic-27-tweets} on
+page~\pageref{tab:topic-27-tweets}, we can see that both models have very similar tweets. It also
+tells us that the 40 topics model merged two topics as our 30 topics model did. Unfortunately, the
+second topic are not similar but this is acceptable because both models are slightly different which
+makes a 100\% similarity highly unlikely. \Sectionref{sec:topic-27} gives a more detailed
+explanation of what the common tweets represent.
+
+
+
 
 
