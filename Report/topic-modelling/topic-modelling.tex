@@ -24,18 +24,19 @@ Finally, we converted the tweets into features(unigrams and bigrams). For topic 
 perform the same operations and more. Specifically, we remove anything that does not add value to
 the topic model.
 
-Firstly, we remove user names from our data. Our topic model tried to find relationships in words
-and which user names are technically words, they are irrelevant words. Fortunately, user names on
-twitter follow a specific pattern so they can be easily removed with a regular expression. The
-regular expression used can be found in Appendix~\ref{sec:appx-regular-expressions}. Secondly, our
-dataset is Apple centric so words like ``iphone'', ``ipod'' and ``ipad'' are bound to ocur in almost
-every tweet. For this reason, we add these words to our stop words list so they are remove from
-every tweet. Appendix~\ref{sec:appx-extra-stopwords} has a complete list of these words.
+Firstly, we remove usernames from our data. Our topic model would try to find relationships in
+tweets by using the words that occur in them. Usernames are also techincally words but are
+semantically irrelevant for our use case. Fortunately, usernames on twitter follow a specific
+pattern so they can be easily removed with a regular expression. The regular expression used can be
+found in Appendix~\ref{sec:appx-regular-expressions}. Secondly, our dataset is Apple centric and as
+a result, words like ``iphone'', ``ipod'' and ``ipad'' are bound to occur in almost every tweet. For
+this reason, we add these words to our stop words list so they are remove from every tweet.
+Appendix~\ref{sec:appx-extra-stopwords} has a complete list of these words.
 
 \section{Evaluating Topic Models}
 \label{sec:evaluating-topic-models}
-In this section, we analyse two separate models one of which will comprise of 30 topics while the
-other of 40 topics. They both use a mixture of unigrams and bigrams in their token distribution.
+In this section, we analyse two separate models one of which comprises of 30 topics and the
+other, of 40 topics. They both use a mixture of unigrams and bigrams in their token distribution.
 This was inspired by our experiments in \Sectionref{sec:training-classifier} where the classifier
 showed better performance when using a mixture of unigrams and bigrams. We analyse a few topics for
 each model and have a look at some of the tweets that fall under those topics.
@@ -149,7 +150,7 @@ having 89\% proportion of topic 6.
 rockstar, uses } \\\\
 From a simple scan through the tokens in this topic, we can postulate that the tweets in this topic
 will mostly be about Google, Samsung, Nortel and the Rockstar Consortium. Nortel was a
-communications and networking equipment manufacturer which went bankrupt and the Rockstar Consortium
+communications and networking equipment manufacturer that went bankrupt and the Rockstar Consortium
 was formed to negotiate licensing for patents they owned. However, we do not expect our whole
 dataset to be about patent war between these companies. Samsung and Google are large technology
 companies and we might encounter tweets that simple compare their products with that of Apple. We
@@ -173,7 +174,7 @@ can make this assumption because we know our dataset is Apple-centric.
   \label{tab:topic-7-tweets}
 \end{table}
 
-\Tableref{tab:topic-7-tweets} is a list of 10 randomly selected tweets with with a fair proportion
+\Tableref{tab:topic-7-tweets} is a list of 10 randomly selected tweets with a fair proportion
 of our topic. The first four tweets are about patents and lawsuits and our dataset contains a number
 of variations of those tweets, each of which have been retweeted many times. The fifth, sixth and
 seventh tweets all talk about products by Google while the last three tweets compare Apple's
@@ -185,8 +186,8 @@ products to that of other companies.
 \textit{music, 10, mavericks, number, yes, coming, soon, earn, cards, support}\\\\
 This topic, compared to previous topics, is a little tougher to analyse. ``music'' is th most
 salient token in the distribution but we also have unrelated tokens like ``mavericks'', ``cards'',
-``earn'' and ``support''. While they might actually be closely related, it is not very obvious that
-they are by merely looking at the topic-token distribution. To get a better understanding of this
+``earn'' and ``support''. While they might actually be closely related, it is not very obvious by
+merely looking at the topic-token distribution. To get a better understanding of this
 topic, we take a look at some tweets with a fair proportion of the topic.
 
 \begin{table}[H]
@@ -241,15 +242,15 @@ of the tweets with a fair proportion of the topic.
   \label{tab:topic-12-tweets}
 \end{table}
 
-All tweets(except the 7th) in \Tableref{tab:topic-12-tweets} all refer to the iPhone battery life. A
+All tweets(except the 7th) in \Tableref{tab:topic-12-tweets} refer to the iPhone battery life. A
 very large number of tweets that have a good proportion of this topic take in some way, the shape of
 tweets 1--4 in our table and fortunately, our topic model is able to find the relationship between
 these tweets.
 
 The seventh tweet looks out of place as it has nothing to do with battery life but
 going back to our topic-token distribution, the most salient token as described by the model is
-``day''. Luckily, our dataset also contains a large number of that tweet. This is because that
-articular tweets was retweeted a lot of times.
+``day''. Luckily, our dataset also contains a large number of that tweet and this is because that
+particular tweet was retweeted a lot of times.
 
 
 \subsubsection{Topic 13}
@@ -348,7 +349,7 @@ have a mixture of topics or just a poorly formed one.
 
 From \Tableref{tab:topic-22-tweets}, the first two tweets do refer to the release of a product and
 mobile aplication, respectively. Unfortunately, other tweets have nothing to do with
-produts/application release. The third tweet is a promotional tweet, the fourth is about devices and
+products/application release. The third tweet is a promotional tweet, the fourth is about devices and
 its features, the fifth and sixth refer to features of the iPhone and Mac(Apple's laptop). Without
 going any further, it is fairly clear that these tweets are not related. It is possible that our
 topic model has incorrectly merged multiple topics.
@@ -394,7 +395,7 @@ topic 27. This means that topic 27 is actually a combination of two different to
 \subsubsection{Topic 28}
 \label{sec:topic-28}
 \textit{mini, win, chance, come, chance win, case mini, kickstand, kickstand case, mini models}\\\\
-There are a lot of promotions/giveaways on Twitter that involve apple products. Tokens like
+There are a lot of promotions/giveaways on Twitter that involve Apple products. Tokens like
 ``win'', ``chance'' and ``chance win''  in our distribution tell us that this topic is about these
 promotions. Our dataset is Apple-centric so we could hypothesise that tweets with a large proportion
 of this topic might be offering users a chance to win Apple products like the iPad/Mac Mini, hence
@@ -425,7 +426,7 @@ offering users a chance to win Apple products like the iPad mini. 60\% of the tw
 proportion of this topic are all variations of those tweets. Tweets 6--8 all refer to iPad and
 iPhone cases and contrary to what we previously assumed, these cases are not part of the promotion.
 This means that our topic model has merged two topics that do not complement each other. The last
-two tweets are also have nothing to do with the promotions as well as the cases. These tweets are
+two tweets also have nothing to do with the promotions as well as the cases. These tweets are
 general tweets about the iPad mini. Fortunately, our topic model has tagged them with low
 proportions(50\% and 20\% respectively) which is acceptable.
 
@@ -439,7 +440,7 @@ same dataset for both models so we expect a few overlapping topics. We briefly l
 and then we look at a few new topics.
 
 \Tableref{tab:40-topics} on \Pageref{tab:40-topics} shows a list of 40 topics and their respective
-token distribution. This table can be used to analyse all topics abstractly but to have a genral
+token distribution. This table can be used to analyse all topics abstractly but to have a general
 overview of all tokens in our table, we use a word cloud as shown in \Figref{fig:40-topics-cloud} on
 \Pageref{fig:40-topics-cloud}. In our cloud, we see prominent words like ``app'', ``bbm'',
 ``google'', ``device'' amongst others which also appears in our 30-topic word cloud on
@@ -594,7 +595,7 @@ analyse the tweets categorised under this topic by our 40 topics model.
 Comparing \Tableref{tab:topic-13-tweets-topic-40} above and \Tableref{tab:topic-27-tweets} on
 page~\pageref{tab:topic-27-tweets}, we can see that both models have very similar tweets. It also
 tells us that the 40 topics model merged two topics as our 30 topics model did. Unfortunately, the
-second topic are not similar but this is acceptable because both models are slightly different which
+second topics are not similar but this is acceptable because both models are slightly different which
 makes a 100\% similarity highly unlikely. \Sectionref{sec:topic-27} gives a more detailed
 explanation of what the common tweets represent.
 
