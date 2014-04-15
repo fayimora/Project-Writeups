@@ -26,12 +26,11 @@ anything that does not add any value to the topic model.
 
 Firstly, we remove user names from our data. Our topic model tried to find relationships in words
 and which user names are technically words, they are irrelevant words. Fortunately, user names on
-twitter follow a specific pattern so they can be easily removed with a regular expression. Secondly,
-our dataset is Apple centric so words like ``iphone'', ``ipod'' and ``ipad'' are bound to ocur in
-almost every tweet. For this reason, we add these words to our stop words list and remove them from
-every tweet. The regular expression used can be found in
-Appendix~\ref{sec:appx-regular-expressions}.
-
+twitter follow a specific pattern so they can be easily removed with a regular expression. The
+regular expression used can be found in Appendix~\ref{sec:appx-regular-expressions}. Secondly, our
+dataset is Apple centric so words like ``iphone'', ``ipod'' and ``ipad'' are bound to ocur in almost
+every tweet. For this reason, we add these words to our stop words list so they are remove from
+every tweet. Appendix~\ref{sec:appx-extra-stopwords} has a complete list of these words.
 
 \section{Evaluating Topic Models}
 \label{sec:evaluating-topic-models}
