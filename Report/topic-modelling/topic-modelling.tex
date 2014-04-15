@@ -17,7 +17,21 @@ attention to them during our analysis.
 
 \section{Pre-processing}
 \label{sec:lda-preprocessing}
-Before running LDA on the dataset, we have to pre-process the tweeets
+Before running LDA on the dataset, we have to cleanup our dataset and what we do is very similar to
+what we did in \Sectionref{sec:classification-preprocessing}. In summary, we perused our tweets
+and removed the occurrence of special characters like newlines, we remove all links from the tweets,
+we then remove stop words from the tweet. Finally, we converted the tweets into features(unigrams
+and bigrams). For topic modelling, we perform the same operations and more. Mainly, we will remove
+anything that does not add any value to the topic model.
+
+Firstly, we remove user names from our data. Our topic model tried to find relationships in words
+and which user names are technically words, they are irrelevant words. Fortunately, user names on
+twitter follow a specific pattern so they can be easily removed with a regular expression. Secondly,
+our dataset is Apple centric so words like ``iphone'', ``ipod'' and ``ipad'' are bound to ocur in
+almost every tweet. For this reason, we add these words to our stop words list and remove them from
+every tweet. The regular expression used can be found in
+Appendix~\ref{sec:appx-regular-expressions}.
+
 
 \section{Evaluating Topic Models}
 \label{sec:evaluating-topic-models}
@@ -96,6 +110,7 @@ verify our assumptions.\\
 
 
 
+\newpage
 \subsubsection{Topic 6}
 \label{sec:topic-6}
 \textit{ios, lets, bbm ios, ios lets, lets apps, features, game, tech, missed} \\\\
