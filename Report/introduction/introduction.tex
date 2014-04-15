@@ -91,22 +91,20 @@ perfect source for our data.
 % TODO: very much bare bones
 \section{Methodology}
 \label{sec:methodology}
-How do I plan to approach this research? What kind of machine learning/text processing methods,
-evaluation techniques will be used?
-
 This study requires social data and the dataset used is gathered from Twitter over a time frame.
 The data collected is related to Apple Inc and their products.
 
-With data already gathered, the first step would be to start training a classifier to help filter
-out as many irrelevant tweets as possible. We will briefly analyse different ways to classify text.
-We eventually settle with the Na\"{i}ve Bayes Classifier and we look into different ways of analysing
-its performance.
+With data already gathered, we train a classifier to help filter out as many irrelevant tweets as
+possible. We briefly analyse different ways to filter the dataset but eventually settle with using
+Na\"{i}ve Bayes Classifier. We also look into different ways of analysing the classifier's
+performance and ways it can be improved.
 
-The next step will be to identify topics/themes in the data. This means we will attempt to detect
-the main topics being discussed with respect to Apple Inc. We briefly look at Latent Semantic
+Finally, we attempt to identify topics/themes in the dataset. We briefly look at Latent Semantic
 Indexing and why it might not be suitable for our needs. We then look into Latent Dirichlet
-Allocation, a common approach to topic modelling and use it to detect themes in our dataset.
-
+Allocation, a common approach to topic modelling and use it to detect topics in our dataset. The
+evaluation of topics generated will be analysed empirically. This means we take a topic and make
+some assumptions about the semantics of the tweets belonging to that topic. We then analyse the
+tweets to confirm the validity of our assumption.
 
 \section{Statement of Originality}
 
