@@ -5,6 +5,11 @@ This appendix contains more detailed information about the pre-processing tasks 
 
 \section{Regular Expressions}
 \label{sec:appx-regular-expressions}
+The regular expression used to find links in our text is:
+\begin{verbatim}
+  {(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?}
+\end{verbatim}
+
 The regular expression for finding twitter user names is:
 \begin{verbatim}
   @[a-zA-Z0-9]+ ?

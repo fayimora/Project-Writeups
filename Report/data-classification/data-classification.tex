@@ -88,10 +88,7 @@ off newlines and whitespace and it can be easily done in one line of code. Remov
 the text is a little more complex and the ``easiest'' way to do this would be to use a regular
 expression. \citet{friedl2006mastering} in his book \textit{Mastering Regular Expressions} describes
 regular expressions as a very flexible mini language that is used for text processing. The regular
-expression we will be using to find links in our text is
-\begin{verbatim}
-  {(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?}
-\end{verbatim}
+expression used can be found in Appendix~\ref{sec:appx-regular-expressions}.
 
 Unfortunately, all a regular expression can do is search for patterns in text. Luckily, most
 programming languages provide support for regular expressions so all we have to do is search for the
