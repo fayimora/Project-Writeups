@@ -175,7 +175,7 @@ resulting matrix to train our classifier.
       0.9874          & 0.0005        & \textbf{0.7455} & 0.0210 \\
       0.9873          & 0.0005        & 0.7454          & 0.0200 \\ \bottomrule
     \end{tabular}
-      \caption{With stopwords}
+      \caption{With stop words}
       \label{tab:data-with-stopwords}
   \end{subtable}
   % =======================
@@ -194,7 +194,7 @@ resulting matrix to train our classifier.
       0.9901          & 0.0004        & 0.7592          & 0.0160 \\
       0.9900          & 0.0004        & 0.7572          & 0.0160 \\ \bottomrule
     \end{tabular}
-      \caption{Without stopwords}
+      \caption{Without stop words}
       \label{tab:data-without-stopwords}
   \end{subtable}
 \caption{Accuracy and AUC for 10-fold cross validation}
@@ -202,8 +202,8 @@ resulting matrix to train our classifier.
 \end{table}
 
 In \Sectionref{sec:classification-preprocessing}, we looked at different pre-processing tasks to be
-carried out, one of which was the removal of stopwords. In this section, we train two classifiers,
-one with stopwords in our data and the other with stopwords removed from the data. We then three
+carried out, one of which was the removal of stop words. In this section, we train two classifiers,
+one with stop words in our data and the other with stop words removed from the data. We then three
 different but complementary methods. They include:
 
 \begin{description}
@@ -214,15 +214,15 @@ different but complementary methods. They include:
 
 Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
 representing the result of running 10-fold cross validation on our trained classifier with and
-without stopwords, respectively. It also depicts the accuracy, AUC and standard deviation between
+without stop words, respectively. It also depicts the accuracy, AUC and standard deviation between
 folds.
 
 We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
 deviation indicates that there is not much variation between folds and the values are very close to
 the mean value. Comparing the highest AUC in both tables(values in bold), we can see that the removal
-of stopwords gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
+of stop words gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
 Figures~\ref{fig:auc-with-stopwords} and~\ref{fig:auc-without-stopwords} gives a visual
-representation of the AUC curve. This increase proves that training a classifier without stopwords
+representation of the AUC curve. This increase proves that training a classifier without stop words
 in our dataset gives better performance.
 
 While 0.76 is an acceptable AUC, it turns out we can do even better and the next section shows how
@@ -232,16 +232,16 @@ we can achieve this.
   \centering
   \begin{subfigure}[b]{0.49\linewidth}
     \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_01}
-  \caption{AUC=74 with stopwords}
+  \caption{AUC=74 with stop words}
   \label{fig:auc-with-stopwords}
   \end{subfigure}
   % =============
   \begin{subfigure}[b]{0.49\linewidth}
       \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_02}
-  \caption{AUC=76 without stopwords}
+  \caption{AUC=76 without stop words}
   \label{fig:auc-without-stopwords}
   \end{subfigure}
-\caption{AUC curves with and without stopwords}
+\caption{AUC curves with and without stop words}
 \label{fig:auc-curves-stopwords}
 \end{figure}
 
