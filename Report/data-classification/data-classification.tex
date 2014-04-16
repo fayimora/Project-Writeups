@@ -158,26 +158,6 @@ Now that we have converted our corpora into a bag of words representation, we wi
 resulting matrix to train our classifier.
 
 \subsection{Training the initial classifier}
-In \Sectionref{sec:classification-preprocessing}, we looked at different pre-processing tasks to be
-carried out, one of which was the removal of stopwords. In this section, we train two classifiers,
-one with stopwords in our data and the other with stopwords removed from the data. We then three
-different but complementary methods. They include:
-
-\begin{description}
-  \item[Accuracy:]
-  \item[Area under the ROC curve:]
-  \item[Cross Validation:]
-\end{description}
-
-Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
-representing the result of running 10-fold cross validation on our trained classifier with and
-without stopwords, respectively. It also depicts the accuracy, AUC and standard deviation between
-folds.
-
-We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
-deviation indicates that there is not much variation between folds and the values are very close to
-the mean value.
-
 
 \begin{table}
   \begin{subtable}{.5\linewidth}
@@ -220,6 +200,31 @@ the mean value.
 \caption{Accuracy and AUC for 10-fold cross validation}
 \label{tab:with-without-stopwords-data-tables}
 \end{table}
+
+In \Sectionref{sec:classification-preprocessing}, we looked at different pre-processing tasks to be
+carried out, one of which was the removal of stopwords. In this section, we train two classifiers,
+one with stopwords in our data and the other with stopwords removed from the data. We then three
+different but complementary methods. They include:
+
+\begin{description}
+  \item[Accuracy:]
+  \item[Area under the ROC curve:]
+  \item[K-fold Cross Validation:]
+\end{description}
+
+Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
+representing the result of running 10-fold cross validation on our trained classifier with and
+without stopwords, respectively. It also depicts the accuracy, AUC and standard deviation between
+folds.
+
+We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
+deviation indicates that there is not much variation between folds and the values are very close to
+the mean value. Comparing the higest AUC in both tables(values in bold), we can see that the removal
+of stopwords gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
+Figures~\ref{fig:auc-with-stopwords} and~\ref{fig:auc-without-stopwords} gives a visual
+representation of the AUC curve. This increase proves that training a classifier without stopwords
+in our dataset gives better performance. While 0.76 is an acceptable AUC, it turns out we can do
+even better and the next section shows how we can ahieve this.
 
 \begin{figure}
   \centering
