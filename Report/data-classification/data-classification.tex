@@ -158,23 +158,26 @@ Now that we have converted our corpora into a bag of words representation, we wi
 resulting matrix to train our classifier.
 
 \subsection{Training the initial classifier}
-\begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.49\linewidth}
-    \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_01}
-  \caption{AUC=74 with stopwords}
-  \label{fig:auc-with-stopwords}
-  \end{subfigure}
-  % =============
-  \begin{subfigure}[b]{0.49\linewidth}
-      \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_02}
-  \caption{AUC=76 without stopwords}
-  \label{fig:auc-without-stopwords}
-  \end{subfigure}
+In \Sectionref{sec:classification-preprocessing}, we looked at different pre-processing tasks to be
+carried out, one of which was the removal of stopwords. In this section, we train two classifiers,
+one with stopwords in our data and the other with stopwords removed from the data. We then three
+different but complementary methods. They include:
 
-\caption{AUC curves with and without stopwords}
-\label{fig:auc-curves-stopwords}
-\end{figure}
+\begin{description}
+  \item[Accuracy:]
+  \item[Area under the ROC curve:]
+  \item[Cross Validation:]
+\end{description}
+
+Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
+representing the result of running 10-fold cross validation on our trained classifier with and
+without stopwords, respectively. It also depicts the accuracy, AUC and standard deviation between
+folds.
+
+We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
+deviation indicates that there is not much variation between folds and the values are very close to
+the mean value.
+
 
 \begin{table}
   \begin{subtable}{.5\linewidth}
@@ -218,6 +221,22 @@ resulting matrix to train our classifier.
 \label{tab:with-without-stopwords-data-tables}
 \end{table}
 
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_01}
+  \caption{AUC=74 with stopwords}
+  \label{fig:auc-with-stopwords}
+  \end{subfigure}
+  % =============
+  \begin{subfigure}[b]{0.49\linewidth}
+      \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_02}
+  \caption{AUC=76 without stopwords}
+  \label{fig:auc-without-stopwords}
+  \end{subfigure}
+\caption{AUC curves with and without stopwords}
+\label{fig:auc-curves-stopwords}
+\end{figure}
 
 
 \subsection{Improving the classifier}
