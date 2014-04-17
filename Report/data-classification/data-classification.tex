@@ -207,20 +207,36 @@ one with stop words in our data and the other with stop words removed from the d
 different but complementary methods. They include:
 
 \begin{description}
-  \item[Accuracy:]
-  \item[Area under the ROC curve:]
+  \item[Accuracy:] This is the degree to which our classifier is correct. For instance, if we give
+    it 20 instances and it rightly classifies 7, then we say our classifier is 70\% accurate. The
+    problem with accuracy is that the value does not take into consideration the number of false
+    positives or false negatives. So for instances, how many relevant samples were classified as
+    irrelevant and vice versa. Research  by \citet{ling2003auc} shows that accuracy is also not a
+    good measure when dealing with unbalanced classes. Our dataset is highly unbalanced so we cannot
+    use accuracy to evaluate performance.
+
+  \item[Receiver Operating Characteristic curve:] The ROC curve was introduced in signal processing
+    and used to evaluate the prediction power of different classification algorithms. More
+    importantly, the area under this curve, referrred to henceforth as AUC, is the metric used to
+    compare the performance of different classifiers \citep{bradley1997use}. As \citet{ling2003auc}
+    describes, AUC is generally a better measure because it takes into consideration the precision
+    an sensitivity(also called recall) of the classifier\footnote{See
+      \url{http://en.wikipedia.org/wiki/Precision_and_recall} for a more detailed explanation of
+    precision and recall}. The ROC curve is created by plotting the precision of a classifier
+    against its sensitivity.
+
   \item[K-fold Cross Validation:]
 \end{description}
 
 Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
 representing the result of running 10-fold cross validation on our trained classifier with and
 without stop words, respectively. It also depicts the accuracy, AUC and standard deviation between
-folds.
+folds but we shall focus more on the AUC.
 
 We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
 deviation indicates that there is not much variation between folds and the values are very close to
 the mean value. Comparing the highest AUC in both tables(values in bold), we can see that the
-removal of stop words gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
+removal of stop words gives us approximately 2.2\%(from 0.7455 to 0.7618 AUC) increase in AUC\@.
 Figures~\ref{fig:auc-with-stopwords} and~\ref{fig:auc-without-stopwords} gives a visual
 representation of the AUC curve. The value used in the plots is the average AUC over all folds.
 This increase proves that training a classifier without stop words in our dataset gives better
@@ -281,7 +297,7 @@ TF-IDF stands for Term Frequency-Inverse Document Frequency is a weighting schem
 to determine the importance of a word to a document in a corpus. Up until now, we have been using
 the bag-of-words representation which gives us the term\footnote{A term is also a word in this case}
 frequency. However, this is inadequate because a document with 5 occurrences of a word is not
-necessarily 5 times relevant that a document with only 1 occurrence of the same word. This is where
+necessarily 5 times relevant than a document with only 1 occurrence of the same word. This is where
 the inverse document frequency comes in.
 
 The inverse document frequency measures how important a word is in a document. It weighs down terms
