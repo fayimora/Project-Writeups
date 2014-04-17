@@ -268,26 +268,31 @@ we can achieve this.
     \label{tab:tfidf-model-table}
 \end{table}
 
+In the previous section we were able to get up to 0.76 AUC\@. In this section we explore two ways of
+improving this value. Firstly, we look into a new type of vector space model for representing our
+corpus called the tf-idf weighting scheme. We briefly look at how it is different from the bag of
+words model and what makes it better. Secondly, we try to train multiple classifiers with
+different combinations of model parameters to try to find the best possible match of parameters.
 
-\begin{table}
-  \centering
-  \begin{tabular}{cccc} \toprule
-    accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
-    \textbf{0.9961} & 0.0000        & 0.8415          & 0.0000 \\
-    0.9960          & 0.0001        & \textbf{0.8610} & 0.0195 \\
-    0.9955          & 0.0007        & 0.8445          & 0.0282 \\
-    0.9955          & 0.0006        & 0.8491          & 0.0257 \\
-    0.9954          & 0.0005        & 0.8441          & 0.0251 \\ \midrule
-    0.9954          & 0.0005        & 0.8447          & 0.0229 \\
-    0.9954          & 0.0005        & 0.8465          & 0.0217 \\
-    0.9954          & 0.0004        & 0.8470          & 0.0203 \\
-    0.9954          & 0.0004        & 0.8468          & 0.0192 \\
-    0.9954          & 0.0004        & 0.8487          & 0.0191 \\ \bottomrule
-  \end{tabular}
-    \caption{Accuracy and AUC for best model}
-    \label{tab:best-model}
-\end{table}
 
+\subsubsection{Using TF-IDF Weighting Scheme}
+TF-IDF stands for Term Frequency-Inverse Document Frequency is a weighting scheme that can be used
+to determine the importance of a word to a document in a corpus. Up until now, we have been using
+the bag-of-words representation which gives us the term\footnote{A term is also a word in this case}
+frequency. However, this is inadequate because a document with 5 occurrences of a word is not
+necessarily 5 times relevant that a document with only 1 occurrence of the same word. This is where
+the inverse document frequency comes in.
+
+The inverse document frequency measures how important a word is in a document. It weighs down terms
+with a high frequency while weighing up the terms with lower occurrences. This is useful mainly
+because we can get rid of stop words that do not appear in our stop words list.
+
+\Tableref{tab:tfidf-model-table} shows use the results of running 10-fold cross validation using the
+tf-idf scheme. We can see that our standard deviation remains low, as in the previous section which
+is good but more importantly, we have a tremendous increase in AUC\@. We achieved approximately
+0.76AUC in the previous section and our highest value after using the tf-idf weighting scheme is
+approximately 0.80AUC which is a 5.7\% increase in AUC\@. \Figref{fig:auc-tfidf} is a visual
+representation of the area under the ROC curve, AUC.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_03}
@@ -296,9 +301,35 @@ we can achieve this.
 \end{figure}
 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_04}
-\caption{AUC curve for best found model}
-\label{fig:auc-best-model}
-\end{figure}
+% It is usually composed of the term frequency and the inverse document frequency. The term frequency is the number of times a word appears in 
+
+
+
+
+% \begin{table}
+%   \centering
+%   \begin{tabular}{cccc} \toprule
+%     accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
+%     \textbf{0.9961} & 0.0000        & 0.8415          & 0.0000 \\
+%     0.9960          & 0.0001        & \textbf{0.8610} & 0.0195 \\
+%     0.9955          & 0.0007        & 0.8445          & 0.0282 \\
+%     0.9955          & 0.0006        & 0.8491          & 0.0257 \\
+%     0.9954          & 0.0005        & 0.8441          & 0.0251 \\ \midrule
+%     0.9954          & 0.0005        & 0.8447          & 0.0229 \\
+%     0.9954          & 0.0005        & 0.8465          & 0.0217 \\
+%     0.9954          & 0.0004        & 0.8470          & 0.0203 \\
+%     0.9954          & 0.0004        & 0.8468          & 0.0192 \\
+%     0.9954          & 0.0004        & 0.8487          & 0.0191 \\ \bottomrule
+%   \end{tabular}
+%     \caption{Accuracy and AUC for best model}
+%     \label{tab:best-model}
+% \end{table}
+
+
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_04}
+% \caption{AUC curve for best found model}
+% \label{fig:auc-best-model}
+% \end{figure}
 
