@@ -219,11 +219,12 @@ folds.
 
 We can see from the tables that the standard deviation($\sigma$) is very low. A low standard
 deviation indicates that there is not much variation between folds and the values are very close to
-the mean value. Comparing the highest AUC in both tables(values in bold), we can see that the removal
-of stop words gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
+the mean value. Comparing the highest AUC in both tables(values in bold), we can see that the
+removal of stop words gives us approximately 2.2\%(from 0.7455 to 0.7618) increase in AUC\@.
 Figures~\ref{fig:auc-with-stopwords} and~\ref{fig:auc-without-stopwords} gives a visual
-representation of the AUC curve. This increase proves that training a classifier without stop words
-in our dataset gives better performance.
+representation of the AUC curve. The value used in the plots is the average AUC across all folds.
+This increase proves that training a classifier without stop words in our dataset gives better
+performance.
 
 While 0.76 is an acceptable AUC, it turns out we can do even better and the next section shows how
 we can achieve this.
@@ -292,7 +293,8 @@ tf-idf scheme. We can see that our standard deviation remains low, as in the pre
 is good but more importantly, we have a tremendous increase in AUC\@. We achieved approximately
 0.76AUC in the previous section and our highest value after using the tf-idf weighting scheme is
 approximately 0.80AUC which is a 5.7\% increase in AUC\@. \Figref{fig:auc-tfidf} is a visual
-representation of the area under the ROC curve, AUC.
+representation of the area under the ROC curve, AUC\@. The value used in the plot is the average AUC
+across all folds.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_03}
@@ -301,10 +303,9 @@ representation of the area under the ROC curve, AUC.
 \end{figure}
 
 
-% It is usually composed of the term frequency and the inverse document frequency. The term frequency is the number of times a word appears in 
 
-
-
+\subsubsection{Exhaustive Grid Search}
+\label{sec:exhaustive-grid-search}
 
 % \begin{table}
 %   \centering
