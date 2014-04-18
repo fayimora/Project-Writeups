@@ -225,7 +225,12 @@ different but complementary methods. They include:
     precision and recall}. The ROC curve is created by plotting the precision of a classifier
     against its sensitivity.
 
-  \item[K-fold Cross Validation:]
+  \item[K-fold Cross Validation:] Training and validating/testing a classifier with the same dataset
+    is ineffective because the classifier simply labels examples it has just seen. This problem is
+    called overfitting and to solve it, we use the k-fold cross validation technique. The idea is to
+    split our data into $k$ folds\footnote{A fold is essentially a fraction of the dataset}, train
+    the classifier on $k-1$ folds and test on the remaining fold. This process is repeated $k$ times
+    to ensure every fold has been used for validation.
 \end{description}
 
 Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
