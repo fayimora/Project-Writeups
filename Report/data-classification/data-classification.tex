@@ -326,33 +326,48 @@ over all folds.
 
 
 
-\subsubsection{Exhaustive Grid Search}
+\subsubsection{Exhaustive Grid Search for Model Selection}
 \label{sec:exhaustive-grid-search}
+So far, we have improved our model by manually changing parameters. We could automate our model
+selection process by training multiple models with a different combination of parameters and then
+picking This is usually referred to as grid search and it is a common way to optimize parameters for
+models. One way to achieve this is to wrap a chain of pre-processors, so it can be represented as
+one large pre-processor, and add the classifier to the end of the chain. We shall refer to this
+chain as a \textit{pipeline}. When the pipeline is invoked, the data goes through a chain of
+pre-processors and finally the classifier. Our pipeline must accept all inputs for each
+pre-processor and the classifier. The creation of this pipeline is not necessary but it makes
+automating the grid search easier. Also, depending on the number of parameters and how long it takes
+to train a classifier and cross-validate it, this task can easily take hours to complete.
 
-% \begin{table}
-%   \centering
-%   \begin{tabular}{cccc} \toprule
-%     accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
-%     \textbf{0.9961} & 0.0000        & 0.8415          & 0.0000 \\
-%     0.9960          & 0.0001        & \textbf{0.8610} & 0.0195 \\
-%     0.9955          & 0.0007        & 0.8445          & 0.0282 \\
-%     0.9955          & 0.0006        & 0.8491          & 0.0257 \\
-%     0.9954          & 0.0005        & 0.8441          & 0.0251 \\ \midrule
-%     0.9954          & 0.0005        & 0.8447          & 0.0229 \\
-%     0.9954          & 0.0005        & 0.8465          & 0.0217 \\
-%     0.9954          & 0.0004        & 0.8470          & 0.0203 \\
-%     0.9954          & 0.0004        & 0.8468          & 0.0192 \\
-%     0.9954          & 0.0004        & 0.8487          & 0.0191 \\ \bottomrule
-%   \end{tabular}
-%     \caption{Accuracy and AUC for best model}
-%     \label{tab:best-model}
-% \end{table}
+\begin{table}
+  \centering
+  \begin{tabular}{cccc} \toprule
+    accuracy        & std($\sigma$) & AUC             & std($\sigma$) \\ \midrule
+    \textbf{0.9961} & 0.0000        & 0.8415          & 0.0000 \\
+    0.9960          & 0.0001        & \textbf{0.8610} & 0.0195 \\
+    0.9955          & 0.0007        & 0.8445          & 0.0282 \\
+    0.9955          & 0.0006        & 0.8491          & 0.0257 \\
+    0.9954          & 0.0005        & 0.8441          & 0.0251 \\ \midrule
+    0.9954          & 0.0005        & 0.8447          & 0.0229 \\
+    0.9954          & 0.0005        & 0.8465          & 0.0217 \\
+    0.9954          & 0.0004        & 0.8470          & 0.0203 \\
+    0.9954          & 0.0004        & 0.8468          & 0.0192 \\
+    0.9954          & 0.0004        & 0.8487          & 0.0191 \\ \bottomrule
+  \end{tabular}
+    \caption{Accuracy and AUC for best model}
+    \label{tab:best-model}
+\end{table}
+
+\Tableref{tab:best-model} shows the results for the cross-validation of the best model in our grid.
+Although the standard deviation across folds is slightly higher(averagely 25\% higher) compared to
+our previous models, there is also a big improvement in AUC\@. Our best fold produced 0.86 AUC which
+is a 7.2\% increase. \Figref{fig:auc-best-model} also shows a visual representation of the area
+under the ROC curve, AUC.
 
 
-
-% \begin{figure}
-%   \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_04}
-% \caption{AUC curve for best found model}
-% \label{fig:auc-best-model}
-% \end{figure}
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figures/pr_NB_Tweets_Classifier_04}
+\caption{AUC curve for best found model}
+\label{fig:auc-best-model}
+\end{figure}
 
