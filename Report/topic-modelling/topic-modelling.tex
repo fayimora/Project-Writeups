@@ -11,7 +11,7 @@ respective topic-tokens distribution. For the purpose of this study, a token is 
 bigram. Each row comprises of a list of tokens that try to explain a topic and they are ordered by
 their level of influence. While it is helpful to have our tokens ordered by level of influence, the
 respective influence values are excluded from the table because we will not pay much attention to
-them during our analysis.
+them during our analysis and evaluation.
 
 % TODO: Briefly explain methodology of analysis
 
@@ -19,7 +19,7 @@ them during our analysis.
 \label{sec:lda-preprocessing}
 Before running LDA on the dataset, we have to cleanup our dataset and what we do is very similar to
 what we did in \Sectionref{sec:classification-preprocessing}. In summary, we perused our tweets and
-removed the occurrence of special characters like newlines, all links and stop words from each tweet.
+removed the occurrence of special characters like new lines, all links and stop words from each tweet.
 Finally, we converted the tweets into features(unigrams and bigrams). For topic modelling, we
 perform the same operations and more. Specifically, we remove anything that does not add value to
 the topic model.
@@ -38,8 +38,9 @@ Appendix~\ref{sec:appx-extra-stopwords} has a complete list of these words.
 In this section, we analyse two separate models one of which comprises of 30 topics and the
 other, of 40 topics. They both use a mixture of unigrams and bigrams in their token distribution.
 This was inspired by our experiments in \Sectionref{sec:training-classifier} where the classifier
-showed better performance when using a mixture of unigrams and bigrams. We analyse a few topics for
-each model and have a look at some of the tweets that fall under those topics.
+showed better performance when using a mixture of unigrams and bigrams. We analyse and evaluate a
+few topics from the 30 topics model and have a look at some of the tweets that fall under those
+topics. We the compare topics generated from the 30 topics model to that of the 40 topics model.
 % TODO: Something about our empirical approach to the evaluation here
 % TODO: Talk about model parameters and hyper parameters?
 
@@ -435,16 +436,16 @@ proportions(50\% and 20\% respectively) which is acceptable.
 
 \subsection{Evaluating 40 Topics}
 \label{sec:evaluating-40-topics}
-In \Sectionref{sec:evaluating-30-topics}, we analysed a topic model that generated 30 topics on our
-datset. In this section, we will analyse a model that generates 40 topics on our dataset. We use the
-same dataset for both models so we expect a few overlapping topics. We briefly look at these topics
-and then we look at a few new topics.
+In \Sectionref{sec:evaluating-30-topics}, we analysed a topic model that generated 30 topics from
+our dataset. In this section, we analyse a model that generates 40 topics from our dataset. We use
+the same dataset for both models so we expect a few overlapping topics. We briefly look at these
+topics and then we look at a few new topics.
 
 \Tableref{tab:40-topics} on \Pageref{tab:40-topics} shows a list of 40 topics and their respective
 token distribution. This table can be used to analyse all topics abstractly but to have a general
 overview of all tokens in our table, we use a word cloud as shown in \Figref{fig:40-topics-cloud} on
 \Pageref{fig:40-topics-cloud}. In our cloud, we see prominent words like ``app'', ``bbm'',
-``google'', ``device'' amongst others which also appears in our 30-topic word cloud on
+``google'', ``device'' amongst others which also appears in our 30 topic word cloud on
 \Pageref{fig:30-topics-cloud}.
 
 Most of the tokens used in the 40 topics model also appear in the 30 topics model and as a result, it is
@@ -507,6 +508,7 @@ find similar topics in the 30 topics model and analyse some new topics.\\
 \end{longtable}
 
 
+\newpage
 \subsubsection{Analysing similar topics}
 \label{sec:analysing-topic-similarities}
 As previously mentioned, we expect our 40 topics model to have some similar topics with the 30
@@ -514,7 +516,7 @@ topics model. Fortunately, there are a few similar topics and \Tableref{tab:simi
 of such topics. Each row contains a topic id from our 30 topics model and its corresponding similar
 topic from our 40 topics model. The ids correspond to the ``Topic'' attribute on
 Tables~\ref{tab:30-topics} and~\ref{tab:40-topics}. Both tables can also be found on
-Pages~\ref{tab:30-topics} and~\ref{tab:40-topics} respectively.
+Pages~\pageref{tab:30-topics} and~\pageref{tab:40-topics} respectively.
 
 In other to confirm that these topics are actually similar, we analyse the token distribution
 for some of the topics and also compare tweets with a fair proportion of the respective topics.
