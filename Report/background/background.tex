@@ -12,23 +12,23 @@
 
 Automatic Text Classification or Text Categorisation is a rapidly growing field in Machine Learning
 and Natural Language Processing. This is mainly due to the amount of electronic data we currently
-generate. The main task is to assign one or more classes to a given text document. Applications of
-text classification include \textit{Email Spam Detection} and \textit{Language
-Detection}. The former involves trying to distinguish spam emails from legitimate ones while the
-latter involves the identification of the language a document was written in.
+generate. The main task is to assign one or more classes to a given text document. Some applications
+of text classification include \textit{Email Spam Detection} and \textit{Language Detection}. The
+former involves trying to distinguish spam emails from legitimate ones while the latter involves the
+identification of the language a document was written in.
 
-However, this study makes use of classification techniques for data filtration (removing irrelevant
-documents from a list of documents, similar to spam filtering), topic modelling (extracting topics
-from a list of documents) and sentiment analysis (predicting the sentiment of the author of a
-document). This chapter explains a few background concepts and reviews some relevant research
-previously done in this area.
+However, this study makes use of classification techniques for data filtration which involves
+removing irrelevant documents from a list of documents(similar to spam filtering) and topic
+modelling (extracting topics from a list of documents) and sentiment analysis (predicting the
+sentiment of the author of a document). This chapter explains a few background concepts and reviews
+some relevant research previously done in this area.
 
 \section{Na\"{i}ve Bayes Classifier}
 \label{sec:bg-naive-bayes}
-The Na\"{i}ve Bayes classifier is the simplest classifier that can be used and this is due to the
-fact that it is based on simple Bayes Theorem. It is a probabilistic classifier which assumes that
-all features of the documents are independent of each other. This means that if a document has
-features $f1$ and $f2$ (could be length of document, occurrence of words, language e.t.c), the
+The Na\"{i}ve Bayes classifier is one of the simplest classifier that can be used and this is due to
+the fact that it is based on simple Bayes Theorem. It is a probabilistic classifier which assumes
+that all features of the documents are independent of each other. This means that if a document has
+features $f1$ and $f2$ (could be length of document, occurrence of words e.t.c), the
 existence of $f1$ has nothing to do with the existence of $f2$ and vice versa. This also means that
 it makes assumptions that may or may not be correct, hence the ``Na\"{i}ve'' in its name.
 
@@ -100,7 +100,7 @@ main drawbacks the LSI model suffers from is ambiguity.
 
 Assuming we have two documents, one talking about Microsoft Office and the other talking about
 actual physical office space. How can the model differentiate between the two? Unfortunately, it is
-unable to and a significant step forward to solve this problem was made by
+unable to differentiate between such topics and a significant step to solve this problem was made by
 \citet{hofmann1999probabilistic} who presented the probabilistic LSI model. \citet{blei2003latent}
 argues that while Hoffman's work is a very useful step towards using probabilistic models to model
 text, it is incomplete.
@@ -121,9 +121,9 @@ Latent Dirichlet Allocation(LDA) is a generative\footnote{See
 automatically group words into topics and documents into a mixture of topics \citep{blei2003latent}.
 It works based on the assumption that each document contains one or more topics. Words can also
 exist in multiple topics as they actually do in natural language. In other to tackle the problem of
-ambiguity in LSI, Latent Dirichlet Allocation takes a combination of all topics that seem relevant
+ambiguity LSI suffers from, LDA takes a combination of all topics that seem relevant
 to a document in a corpora\footnote{Corpora is simply a large collection of documents} and compares
-that document to the topics in an effort to determine which topic is more closer to the document.
+that document to the topics in an effort to determine which topic is closer to the document.
 \Figref{fig:lda} shows a graphical model representation of Latent Dirichlet Allocation. The inner
 boxes represents the choice of topics and words within a document while the outer box represents the
 actual documents.
