@@ -1,11 +1,8 @@
 
 \chapter{Data Classification}
 \label{cha:data-classification}
-First step towards this project is to fetch our data from Twitter. The data is classified into two
-groups, relevant and irrelevant. We will be spending most of our time with the relevant data.
-
-To carry out our experiments, we will need to filter out irrelevant tweets. Irrelevant tweets are
-tweets which we do not really care about. Some examples include:
+In this Chapter, we train a classifier to classify our dataset into two groups, relevant and
+irrelevant. Irrelevant tweets are tweets which we do not really care about. Some examples include:
 
 \begin{itemize}
   \item \textit{Every day I'm levelling! And now I'm level 19 in \#CSRClassics for iPhone!}
@@ -22,8 +19,8 @@ of relevant tweets include: their thoughts
 \end{itemize}
 
 Of course we can manually classify this data but when we have millions of tweets, this becomes
-impracticable. This is where we employ some classification algorithms to assist us. This is a
-three step process and we will discuss them in the next sub sections.
+impracticable. This is why we employ some classification algorithms to assist us. The following
+sections discuss how we can achieve this.
 
 \section{Preparing train data}
 \begin{figure}
@@ -50,9 +47,9 @@ screen shot of what the application looks like.
 \end{figure}
 
 While using the web application in \Figref{fig:labeller} makes labelling tweets easier and a
-little quicker, it does not change the fact the we still have to manually label a plethora of
-tweets. To speed up this process even further, the data labeller was made public and the labelling
-was crowd sourced. A list of instructions (\Figref{fig:labeller-instructions}) were also given
+little quicker, it does not change the fact that a plethora of tweets still have to be manually
+labelled. To speed up this process even further, the data labeller was made public and the labelling
+task was crowd sourced. A list of instructions (\Figref{fig:labeller-instructions}) were also given
 to anyone who helped label the tweets.
 
 One problem with crowd sourcing this task is that people have different opinions about what is
@@ -61,9 +58,8 @@ tweet classified as relevant gets a score of 1 and an irrelevant tweet gets 0. T
 tweet was classified twice as relevant, it should have a score of 2 and a tweet classified as
 irrelevant twice should have a score of 0. Tweets that have been classified twice and have a total
 score of 1 are tweets that have been classified as both relevant and irrelevant. These are tweets
-that we have to classify ourselves into a group. While this is not an assured way of getting the
-best training set, it gives us a certain level of confidence about our training set. It is also
-arguably much better than single handedly creating the training set.
+that we have to classify ourselves. While this is not an assured way of getting the best training
+set, it gives us a certain level of confidence about our training set.
 
 \section{Training a classifier}
 \label{sec:training-classifier}
@@ -73,7 +69,7 @@ into relevant and irrelevant groups.
 
 Unfortunately, the classifier takes as input a vector space representation of our tweets and not the
 actual text. This means we have to convert our tweets into a vector representation of some sort. We
-will be using the \textbf{bag of words model} in this study but before we transform the tweets, we
+will be using the \textbf{bag-of-words model} in this study but before we transform the tweets, we
 have to pre-process the tweets.
 
 \subsection{Pre-processing}
@@ -84,24 +80,24 @@ and stop words. We then take each tweet and convert it into a list of \textit{n-
 
 Some tweets have special characters like new lines, excess spaces and Unicode characters and these
 characters are irrelevant for our use-case. Every programming language has a function to strip
-off newlines and whitespace and it can be easily done in one line of code. Removing the links from
+off new lines and whitespace and it can be easily done in one line of code. Removing the links from
 the text is a little more complex and the ``easiest'' way to do this would be to use a regular
 expression. \citet{friedl2006mastering} in his book \textit{Mastering Regular Expressions} describes
 regular expressions as a very flexible mini language that is used for text processing. The regular
 expression used can be found in Appendix~\ref{sec:appx-regular-expressions}.
 
-Unfortunately, all a regular expression can do is search for patterns in text. Luckily, most
-programming languages provide support for regular expressions so all we have to do is search for the
+Unfortunately, all a regular expression can do is search for patterns in text and luckily, most
+programming languages provide support for regular expressions. All we have to do is search for the
 pattern in each tweet and use the language features to replace the matched pattern with nothing(an
-empty string preferably).
+empty string).
 
 The next step is to remove stop words in each tweet. \citet{wilbur1992automatic} defines a stop word
 as ``\textit{a word which may be identified as a word that has the same likelihood of occurring in
 those documents not relevant to a query as in those documents relevant to the query.}'' In other
 words, stop words occur in every document irrespective of the document's relevance. Stop words are
 usually the most common word in a language, English in this case. Some examples include
-\textit{and}, \textit{or}, \textit{the} etc. Removal of stop words from text usually results in
-better model performance as shown in \Figref{fig:auc-curves-stopwords} on page
+\textit{and}, \textit{or}, \textit{the} etc. Removal of stop words usually results in better model
+performance as shown in \Figref{fig:auc-curves-stopwords} on page
 \pageref{fig:auc-curves-stopwords}.
 
 %TODO: reference a table in a future section that proves this.
@@ -121,7 +117,7 @@ into how the bag of words model works and then transform our tweets into this mo
 
 
 \subsection{Transforming tweets to bag-of-words}
-The bag of words model is a common representation for text that involves representing a document as
+The bag-of-words model is a common representation for text that involves representing a document as
 a multiset of its words. It is a very common way to represent documents and it has also been used
 recently in computer vision \citep{sivic2009efficient}. All sets are combined to form a
 document-term matrix of the corpora. The rows represent each document while the columns represent
@@ -151,10 +147,10 @@ the following documents:
 \end{table}
 
 By the above definition, \Tableref{tab:document-term-matrix} will be an accurate representation
-of our sentences using the bag of words model. Note that in our example, each sentence is a document
+of our sentences using the bag-of-words model. Note that in our example, each sentence is a document
 and all sentences form the corpora.
 
-Now that we have converted our corpora into a bag of words representation, we will now use the
+Now that we have converted our corpora into a bag-of-words representation, we will now use the
 resulting matrix to train our classifier.
 
 \subsection{Training the initial classifier}
@@ -209,9 +205,9 @@ include:
 
 \begin{description}
   \item[Accuracy:] This is the degree to which our classifier is correct. For instance, if we give
-    it 20 instances and it rightly classifies 7, then we say our classifier is 70\% accurate. The
+    it 10 instances and it rightly classifies 7, then we say our classifier is 70\% accurate. The
     problem with accuracy is that the value does not take into consideration the number of false
-    positives or false negatives. So for instances, how many relevant samples were classified as
+    positives or false negatives. So for instance, how many relevant samples were classified as
     irrelevant and vice versa. Research  by \citet{ling2003auc} shows that accuracy is also not a
     good measure when dealing with unbalanced classes. Our dataset is highly unbalanced so we cannot
     use accuracy to evaluate performance.
@@ -226,12 +222,12 @@ include:
     precision and recall}. The ROC curve is created by plotting the precision of a classifier
     against its sensitivity.
 
-  \item[K-fold Cross Validation:] Training and validating/testing a classifier with the same dataset
-    is ineffective because the classifier simply labels examples it has just seen. This problem is
-    called overfitting and to solve it, we use the k-fold cross validation technique. The idea is to
-    split our data into $k$ folds\footnote{A fold is essentially a fraction of the dataset}, train
-    the classifier on $k-1$ folds and test on the remaining fold. This process is repeated $k$ times
-    to ensure every fold has been used for validation.
+  \item[K-fold Cross Validation:] Training and validating a classifier with the same dataset is
+    ineffective because the classifier simply labels examples it has just seen. This problem is
+    called \textbf{overfitting} and to solve it, we use the k-fold cross validation technique. The
+    idea is to split our data into $k$ folds\footnote{A fold is essentially a fraction of the
+    dataset}, train the classifier on $k-1$ folds and test on the remaining fold. This process is
+    repeated $k$ times to ensure every fold has been used for validation.
 \end{description}
 
 Tables~\ref{tab:data-with-stopwords} and~\ref{tab:data-without-stopwords} contains a list of values
@@ -293,30 +289,28 @@ we can achieve this.
 
 In the previous section we were able to get up to 0.76 AUC\@. In this section we explore two ways of
 improving this value. Firstly, we look into a new type of vector space model for representing our
-corpus called the tf-idf weighting scheme. We briefly look at how it is different from the bag of
-words model and what makes it better. Secondly, we try to train multiple classifiers with
-different combinations of model parameters to try to find the best possible match of parameters.
+corpus called the tf-idf weighting scheme. We briefly look at how it is different from the
+bag-of-words model and what makes it better. Secondly, we train multiple classifiers with different
+combinations of model parameters to try to find the best possible combinations of parameters.
 
 
-\subsubsection{Using TF-IDF Weighting Scheme}
-TF-IDF stands for Term Frequency-Inverse Document Frequency is a weighting scheme that can be used
-to determine the importance of a word to a document in a corpus. Up until now, we have been using
-the bag-of-words representation which gives us the term\footnote{A term is also a word in this case}
-frequency. However, this is inadequate because a document with 5 occurrences of a word is not
-necessarily 5 times relevant than a document with only 1 occurrence of the same word. This is where
-the inverse document frequency comes in.
+\subsubsection{Using TF-IDF Weighting Scheme} TF-IDF(Term Frequency-Inverse Document Frequency) is a
+weighting scheme that can be used to determine the importance of a word to a document in a corpus.
+Up until now, we have been using the bag-of-words representation which gives us the term\footnote{A
+term is also a word in this case} frequency. However, this is inadequate because a document with 5
+occurrences of a word is not necessarily 5 times more relevant than a document with only 1
+occurrence of the same word. This is where the inverse document frequency comes in.
 
 The inverse document frequency measures how important a word is in a document. It weighs down terms
-with a high frequency while weighing up the terms with lower occurrences. This is useful mainly
+with a high frequency and scales up the terms with lower occurrences. This is useful mainly
 because we can get rid of stop words that do not appear in our stop words list.
 
-\Tableref{tab:tfidf-model-table} shows use the results of running 10-fold cross validation using the
+\Tableref{tab:tfidf-model-table} shows the results of running 10-fold cross validation using the
 tf-idf scheme. We can see that our standard deviation remains low, as in the previous section which
-is good but more importantly, we have a tremendous increase in AUC\@. We achieved approximately
-0.76 AUC in the previous section and our highest value after using the tf-idf weighting scheme is
-approximately 0.80 AUC which is a 5.7\% increase in AUC\@. \Figref{fig:auc-tfidf} is a visual
-representation of the area under the ROC curve, AUC\@. The value used in the plot is the average AUC
-over all folds.
+is good but more importantly, we have a increase in AUC\@. We achieved approximately 0.76 AUC in the
+previous section and our highest value after using the tf-idf weighting scheme is approximately 0.80
+AUC which is a 5.7\% increase in AUC\@. \Figref{fig:auc-tfidf} is a visual representation of the
+area under the ROC curve, AUC\@. The value used in the plot is the average AUC over all folds.
 
 \begin{figure}
   \includegraphics[scale=0.65]{Figures/pr_NB_Tweets_Classifier_03}
@@ -330,14 +324,14 @@ over all folds.
 \label{sec:exhaustive-grid-search}
 So far, we have improved our model by manually changing parameters. We could automate our model
 selection process by training multiple models with a different combination of parameters and then
-picking This is usually referred to as grid search and it is a common way to optimize parameters for
-models. One way to achieve this is to wrap a chain of pre-processors, so it can be represented as
-one large pre-processor, and add the classifier to the end of the chain. We shall refer to this
-chain as a \textit{pipeline}. When the pipeline is invoked, the data goes through a chain of
-pre-processors and finally the classifier. Our pipeline must accept all inputs for each
-pre-processor and the classifier. The creation of this pipeline is not necessary but it makes
-automating the grid search easier. Also, depending on the number of parameters and how long it takes
-to train a classifier and cross-validate it, this task can easily take hours to complete.
+selecting the best model. This is usually referred to as grid search and it is a common way to
+optimize parameters for models. One way to achieve this is to wrap a chain of pre-processors, so it
+can be represented as one large pre-processor, and add the classifier to the end of the chain. We
+shall refer to this chain as a \textit{pipeline}. When the pipeline is invoked, the data goes
+through a chain of pre-processors and finally the classifier. Our pipeline must accept all inputs
+for each pre-processor and the classifier. The creation of this pipeline is not necessary but it
+makes automating the grid search easier. Also, depending on the number of parameters and how long it
+takes to train a classifier and cross-validate it, this task can easily take hours to complete.
 
 \begin{table}
   \centering
