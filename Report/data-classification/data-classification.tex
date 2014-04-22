@@ -22,7 +22,7 @@ Of course we can manually classify this data but when we have millions of tweets
 impracticable. This is why we employ some classification algorithms to assist us. The following
 sections discuss how we can achieve this.
 
-\section{Preparing train data}
+\section{Preparing Train Data}
 \begin{figure}
   \begin{center}
     \includegraphics[scale=0.6]{Figures/datalabeller}
@@ -61,7 +61,7 @@ score of 1 are tweets that have been classified as both relevant and irrelevant.
 that we have to classify ourselves. While this is not an assured way of getting the best training
 set, it gives us a certain level of confidence about our training set.
 
-\section{Training a classifier}
+\section{Training a Classifier}
 \label{sec:training-classifier}
 As discussed in Section~\ref{sec:bg-naive-bayes}, a Na\"{i}ve Bayes Classifier is a probabilistic
 classifier which is based on the Bayes Theorem. We will train one and use it to classify the tweets
@@ -72,7 +72,7 @@ actual text. This means we have to convert our tweets into a vector representati
 will be using the \textbf{bag-of-words model} in this study but before we transform the tweets, we
 have to pre-process the tweets.
 
-\subsection{Pre-processing}
+\subsection{Pre-Processing}
 \label{sec:classification-preprocessing}
 Pre-processing are the tasks we have to carry out before the main transformation of the tweets to a
 vector space model. Firstly, we will peruse through our tweets to remove new line characters, links
@@ -116,7 +116,7 @@ transforming them into the bag of words matrix representation. In the next secti
 into how the bag of words model works and then transform our tweets into this model.
 
 
-\subsection{Transforming tweets to bag-of-words}
+\subsection{Transforming Tweets to Bag-of-words}
 The bag-of-words model is a common representation for text that involves representing a document as
 a multiset of its words. It is a very common way to represent documents and it has also been used
 recently in computer vision \citep{sivic2009efficient}. All sets are combined to form a
@@ -153,7 +153,7 @@ and all sentences form the corpora.
 Now that we have converted our corpora into a bag-of-words representation, we will now use the
 resulting matrix to train our classifier.
 
-\subsection{Training the initial classifier}
+\subsection{Training The Initial Classifier}
 \label{sec:training-initial-classifier}
 
 \begin{table}
@@ -267,7 +267,7 @@ we can achieve this.
 
 
 
-\subsection{Improving the classifier}
+\subsection{Improving The Classifier}
 
 \begin{table}
   \centering
