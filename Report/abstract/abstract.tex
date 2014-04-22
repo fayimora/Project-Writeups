@@ -2,18 +2,32 @@
 \addcontentsline{toc}{chapter}{Abstract}
 
 \begin{abstract}
-% Every organisation out there today is constantly looking for ways to improve customer satisfaction.
-% \textit{Talk a little bit about 1 or two companies and how they do it (3 sentences\ldots ish)}
-%
-% Social platforms like Facebook and Twitter generate an enormous amount of data on a daily basis.
-% People sometimes use these platforms as an avenue to express their thoughts about products they use.
-% They have discussions with each other about these products and make comparisons.
-%
-% In this study, we will be making use of Apple Incorporated as a case study. We start by mining Apple
-% related data from Twitter and then we proceed to filtering this data into what is relevant and what
-% isn't. Once we have our relevant data, we will use a mixture of Machine Learning and Natural
-% Language Processing techniques to find common topics in the data. Furthermore, we will analyze the
-% sentiments of the data and investigate how it correlates with the topics. Lastly, we will evaluate
-% the techniques applied to determine which ones work best and why.
-%
+Organisations today are always looking for ways to improve their customers' satisfaction. In order
+to do this, they request feedback from these customers via surveys and this is sometimes an
+inconvenience to the customer. One drawback with using surveys is that a large proportion of the
+questions are left unanswered.
+
+In this study, we propose a way of getting this feedback using social media. Social platforms like
+Facebook and Twitter generate an enormous amount of data on a daily basis. One of the problems with
+using data from social media is that it contains a lot of irrelevancy. To solve this problem, we
+train a Na\"{i}ve Bayes Classifier to automatically filter out irrelevant data from our dataset.
+The performance of the classifier is also evaluated and the main metric used is the Area Under the
+Receiver Operating Characteristic Curve(AUC). After careful pre-processing and parameters
+optimization, we were able to achieve 0.85 AUC(85\%).
+
+Finally, we attempt to detect themes in our relevant dataset using Latent Dirichlet Allocation. We
+build and analyse a topic model that generates 30 topics. We empirically evaluate the result of the
+model by making some assumptions about the generated topics and validating our assumptions by
+analysing the tweets categorised under that topic. We also build a new topic model(on the same
+dataset) with 40 topics. We then search for similarities in the 30-topics model and 40-topics model.
+In summary, our evaluation of the topic models show that it is possible to detect themes in social
+data.
+
 \end{abstract}
+
+
+
+% People sometimes use
+% these platforms as an avenue to express their thoughts about products they use. They have
+% discussions with each other about these products and make comparisons. We make use of Apple
+% Incorporated and its products as a case study.
